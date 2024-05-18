@@ -68,8 +68,8 @@ const restaurants = [
         name: "Restaurante Abrassados", 
         latitude: 39.4015487, 
         longitude: -0.3925008, 
-        url: "https://gila.ovh/saborea/restaurante_abrassados.html", 
-        imageUrl: "https://gila.ovh/saborea/rabrassados/rabrassados.png",
+        url: "restaurante_abrassados.html", 
+        imageUrl: "rabrassados/rabrassados.png",
         rating: 1 
     },
     { 

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <title>Parada 1</title>
     <link href="cssSaborea.css" rel="stylesheet">
 </head>
@@ -13,18 +15,21 @@
             <img src="logorda.png" alt="Logo Ruta del Amor" id="logo-saborea" style="height: 175px;">
         </a>
     </header>
+				<div class="button-container">
+    <button onclick="redirectToBestRated()" style="background: none; border: none;" title="Ver el mejor valorado">
+        <i class="fa fa-star" aria-hidden="true"></i>
+    </button>
+    <button onclick="redirectToNearest()" style="background: none; border: none;" title="Ver el más cercano">
+        <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+    </button>
+    <button onclick="window.location.href='registro.html'" style="background: none; border: none;" title="Registro de visitas">
+        <i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
+    </button>
+</div>
+<h1>Parada 1</h1>
+<p style="text-align: center; margin: 20px; color: white;">
+    Bienvenido a la parada numero uno, la parada de nuestro Pueblo.
+</p>
 
-    <h1>Amor por tu pueblo.</h1>
-    <h2>Bienvenido, has llegado a la primera parada, la parada del Amor por tu pueblo.</h2>
-    <div class="h2">     
-        <select id="selector1"></select>
-        <select id="selector2"></select>
-        <select id="selector3"></select>
-        <textarea id="direccion" style="select;" placeholder="Añade tu direccion de entrega aquí..." rows="3"></textarea>
-        <textarea id="anotaciones" style="select;" placeholder="Añade tus anotaciones aquí..." rows="6"></textarea>
-        <button id="compartir-btn" onclick="compartirw()">Enviar por WhatsApp</button>
-    </div>
-    <script src="loadcsv.js"></script>
-    <script src="compartir.js"></script>
 </body>
 </html>

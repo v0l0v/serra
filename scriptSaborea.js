@@ -85,7 +85,7 @@ const restaurants = [
         latitude: 39.397548, 
         longitude: -0.3976812, 
         url: "parada2.html", 
-        imageUrl: "/parada2/logoparada2.png",
+        imageUrl: "parada2/parada2.png",
         rating: 1 
     },
     { 

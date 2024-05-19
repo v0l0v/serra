@@ -65,11 +65,11 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Restaurante Abrassados", 
+        name: "Parada 1", 
         latitude: 39.4015487, 
         longitude: -0.3925008, 
-        url: "restaurante_abrassados.html", 
-        imageUrl: "rabrassados/rabrassados.png",
+        url: "parada1.html", 
+        imageUrl: "parada1/parada1.png",
         rating: 1 
     },
     { 

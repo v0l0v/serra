@@ -58,6 +58,12 @@ header {
     margin-bottom: 20px;
 }
 
+#logo-rda {
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #restaurantsList {
     display: none;
     list-style-type: none;

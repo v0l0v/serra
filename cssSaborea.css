@@ -9,6 +9,7 @@ body {
     background: url('fondorda.webp') no-repeat center center fixed;
     background-size: cover;
     position: relative;
+    color: white;
 }
 
 h1, h2, h4 {
@@ -25,6 +26,7 @@ h1 {
 }
 
 h2 {
+    color: white;
     font-size: 18px;
     text-align: center;
     width: 75%;

@@ -81,11 +81,11 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Restaurante Aurora", 
+        name: "Parada 2", 
         latitude: 39.397548, 
         longitude: -0.3976812, 
-        url: "https://gila.ovh/saborea/restaurante_aurora.html", 
-        imageUrl: "https://gila.ovh/saborea/raurora/raurora.png",
+        url: "parada2.html", 
+        imageUrl: "/parada2/parada2.png",
         rating: 1 
     },
     { 

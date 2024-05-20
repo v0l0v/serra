@@ -1,11 +1,11 @@
 
 const restaurants = [
     { 
-        name: "Restaurante Nou 2", 
+        name: "Parada 3", 
         latitude: 39.4020715, 
         longitude: -0.3895136, 
-        url: "https://gila.ovh/saborea/restaurante_nou2.html", 
-        imageUrl: "https://gila.ovh/saborea/rnou/rnou2.png",
+        url: "parada3.html", 
+        imageUrl: "parada3/parada3.png",
         rating: 1
     },
     { 

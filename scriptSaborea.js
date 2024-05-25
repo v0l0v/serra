@@ -9,11 +9,11 @@ const restaurants = [
         rating: 1
     },
     { 
-        name: "Restaurante Torrijano", 
+        name: "Parada 4", 
         latitude: 39.3994776, 
         longitude: -0.3913431, 
-        url: "https://gila.ovh/saborea/restaurante_torrijano.html", 
-        imageUrl: "https://gila.ovh/saborea/rtorrijano/rtorrijano.png",
+        url: "parada4.html", 
+        imageUrl: "parada4/parada4.png",
         rating: 2
     },
     { 

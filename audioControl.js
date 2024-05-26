@@ -1,20 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var audio = document.getElementById("audio");
-    var button = document.getElementById("audioControl");
-    var icon = button.querySelector("i");
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
+    const stopButton = document.getElementById('stopButton');
 
     // Reproducir audio al cargar la página
     audio.play();
 
-    button.addEventListener("click", function() {
-        if (audio.paused) {
-            audio.play();
-            icon.classList.remove("fa-play");
-            icon.classList.add("fa-pause");
-        } else {
-            audio.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-play");
-        }
+    playButton.addEventListener('click', () => {
+        audio.play();
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'inline-block';
+    });
+
+    pauseButton.addEventListener('click', () => {
+        audio.pause();
+        pauseButton.style.display = 'none';
+        playButton.style.display = 'inline-block';
+    });
+
+    stopButton.addEventListener('click', () => {
+        audio.pause();
+        audio.currentTime = 0;
+        pauseButton.style.display = 'none';
+        playButton.style.display = 'inline-block';
     });
 });

@@ -184,3 +184,32 @@ select, textarea {
     -moz-text-align-last: center; /* Centra el texto en Firefox */
 }
 
+.audio-control-container {
+    display: flex;
+    justify-content: center; /* Centrar los botones horizontalmente */
+    margin: 20px 0; /* Ajustar los márgenes superior e inferior */
+    gap: 20px; /* Espacio entre los botones */
+}
+
+.audio-control {
+    background-color: rgb(99, 1, 26); /* Fondo del botón */
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    border-radius: 50%; /* Hacer el botón redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.audio-control i {
+    pointer-events: none;
+}
+
+.audio-control:hover {
+    background-color: #670418; /* Cambiar el color al pasar el ratón */
+}

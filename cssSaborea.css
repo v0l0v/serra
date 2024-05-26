@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    text-align: center;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: calc(100vh - 100px);
@@ -18,7 +18,7 @@ h1, h2, h4 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 48px;
     text-align: center;
     margin-bottom: 2px;
     width: 75%;
@@ -35,6 +35,7 @@ h2 {
     justify-content: center;
     max-width: 600px;
     margin: 25px auto;
+    text-align: center;
 }
 
 h4 {

@@ -25,11 +25,11 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Restaurante Marins", 
+        name: "Parada 13", 
         latitude: 39.3996542,
         longitude: -0.3948841, 
-        url: "https://gila.ovh/saborea/restaurante_marins.html", 
-        imageUrl: "https://gila.ovh/saborea/rmarins/rmarins.png",
+        url: "parada13.html", 
+        imageUrl: "parada13/parada13.png",
         rating: 1 
     },
     { 

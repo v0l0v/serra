@@ -30,7 +30,24 @@
 
     <div><h1> Amor Propio </h1></div>
 
-    <div><h4>
+	<!-- Botones de control de audio -->
+    <div class="audio-control-container">
+        <button id="playPauseButton" class="audio-control" title="Pausar">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button id="stopButton" class="audio-control" title="Detener">
+            <i class="fas fa-stop"></i>
+        </button>
+    </div>
+
+
+    <!-- Elemento de audio -->
+    <audio id="audio" src="parada13/parada13.mp3" autoplay loop>
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <div>
+	<h4>
     CUANDO ME AMÉ DE VERDAD
 
 	Cuando me amé de verdad
@@ -95,23 +112,8 @@
 	y del caos suelen nacer la mayoría de las estrellas.»
 
 	–Charles Chaplin 
-    </h4></div>
-
-      <!-- Botones de control de audio -->
-    <div class="audio-control-container">
-        <button id="playPauseButton" class="audio-control" title="Pausar">
-            <i class="fas fa-pause"></i>
-        </button>
-        <button id="stopButton" class="audio-control" title="Detener">
-            <i class="fas fa-stop"></i>
-        </button>
-    </div>
-
-
-    <!-- Elemento de audio -->
-    <audio id="audio" src="parada13/parada13.mp3" autoplay loop>
-        Tu navegador no soporta la etiqueta de audio.
-    </audio>
+    </h4>
+	</div>
 
 </body>
 </html>

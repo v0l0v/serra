@@ -17,11 +17,11 @@ const restaurants = [
         rating: 2
     },
     { 
-        name: "Restaurante Moramar", 
+        name: "Parada 14", 
         latitude: 39.400659,
         longitude: -0.3945479, 
-        url: "https://gila.ovh/saborea/restaurante_moramar.html", 
-        imageUrl: "https://gila.ovh/saborea/rmoramar/rmoramar.png",
+        url: "parada14.html", 
+        imageUrl: "parada14/parada14.png",
         rating: 1 
     },
     { 

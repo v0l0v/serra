@@ -124,7 +124,7 @@ button {
 }
 
 .button-container button.active i {
-    color: #670418; /* Color burdeos para la página activa */
+    color: white;  /* Color burdeos para la página activa */
 }
 
 select {

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="audioControl.js"></script>
+    <title>Parada 13</title>
+    <link href="cssSaborea.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logorda.png" alt="Logo Ruta del Amor" id="logo-rda">
+        </a>
+    </header>
+	<div class="button-container">
+		<button onclick="redirectToBestRated()" style="background: none; border: none;" title="Ver el mejor valorado">
+			<i class="fa fa-star" aria-hidden="true"></i>
+		</button>
+		<button onclick="redirectToNearest()" style="background: none; border: none;" title="Ver el más cercano">
+			<i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+		</button>
+		<button onclick="window.location.href='registro.html'" style="background: none; border: none;" title="Registro de visitas">
+			<i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
+		</button>
+	</div>
+
+    <h1> Amor Propio </h1>
+	<!-- Botones de control de audio -->
+    <div class="audio-control-container">
+        <button id="playPauseButton" class="audio-control" title="Pausar">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button id="stopButton" class="audio-control" title="Detener">
+            <i class="fas fa-stop"></i>
+        </button>
+    </div>
+
+
+    <!-- Elemento de audio -->
+    <audio id="audio" src="parada13/parada13.mp3" autoplay loop>
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <div>
+	<h4>
+    CUANDO ME AMÉ DE VERDAD
+
+	Cuando me amé de verdad
+	comprendí que en cualquier circunstancia,
+	yo estaba en el lugar correcto, en la hora correcta,
+	y en el momento exacto, y entonces, pude relajarme.
+	Hoy sé que eso tiene un nombre… Autoestima
+
+	Cuando me amé de verdad,
+	pude percibir que mi angustia,
+	y mi sufrimiento emocional, no es sino una señal
+	de que voy contra mis propias verdades.
+	Hoy sé que eso es… Autenticidad
+
+	Cuando me amé de verdad,
+	dejé de desear que mi vida fuera diferente,
+	y comencé a aceptar todo lo que acontece,
+	y que contribuye a mi crecimiento.
+	Hoy eso se llama… Madurez
+
+	Cuando me amé de verdad,
+	percibí que mi mente puede atormentarme y decepcionarme.
+	Pero cuando la coloco al servicio de mi corazón,
+	ella tiene una gran y valioso aliado.
+	Todo eso es… Saber Vivir
+
+	No debemos tener miedo de cuestionarnos,
+	de hecho hasta los planetas chocan,
+	y del caos suelen nacer la mayoría de las estrellas.»
+
+	–Charles Chaplin 
+    </h4>
+	</div>
+
+</body>
+</html>

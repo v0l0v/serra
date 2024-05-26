@@ -8,6 +8,7 @@
 
     <title>Parada 13</title>
     <link href="cssSaborea.css" rel="stylesheet">
+    <script src="audioControl.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,10 +27,18 @@
         <i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
     </button>
 </div>
-<h1>Parada 13</h1>
-<h2><p>
-    Bienvenido a la parada numero trece, la parada de nuestras tradiciones.
-</p></h2>
+
+    <!-- Botón de control de audio -->
+    <button id="audioControl" style="background: none; border: none;">
+        <i class="fas fa-pause"></i> Música
+    </button>
+    <!-- Elemento de audio -->
+    <audio id="audio" src="parada13/parada13.mp3" loop>
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="audioControl.js" defer></script>
 
 </body>
 </html>

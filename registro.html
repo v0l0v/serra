@@ -12,20 +12,22 @@
     <header>
         <a href="index.html"><img src="logorda.png" alt="Logo Ruta del Amor" id="logo-saborea"></a>
     </header>
-    	<div class="button-container">
+    
+    <div class="button-container">
     <button onclick="redirectToBestRated()" style="background: none; border: none;" title="Ver el mejor valorado">
         <i class="fa fa-star" aria-hidden="true"></i>
     </button>
     <button onclick="redirectToNearest()" style="background: none; border: none;" title="Ver el más cercano">
         <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
     </button>
-				<button onclick="window.location.href='registro.html'" style="background: none; border: none;" title="Registro de visitas" class="active">
-								<i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
-				</button>
-				</div>
-				<p style="text-align: center; margin: 20px; color: white;">
-								Pulsa sobre el logotipo del restaurante en el que hayas estado, para marcarlo como visitado.
-				</p>
+    <button onclick="window.location.href='registro.html'" style="background: none; border: none;" title="Registro de visitas">
+        <i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
+    </button>
+    </div>
+    
+    <p style="text-align: center; margin: 20px; color: white;">
+	Pulsa sobre el logotipo del restaurante en el que hayas estado, para marcarlo como visitado.
+	</p>
     
     <ul id="restaurantsList"></ul>
     <script src="scriptSaborea.js"></script>

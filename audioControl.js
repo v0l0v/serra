@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('audio');
-    const playButton = document.getElementById('playButton');
-    const pauseButton = document.getElementById('pauseButton');
+    const playPauseButton = document.getElementById('playPauseButton');
     const stopButton = document.getElementById('stopButton');
+    const playPauseIcon = playPauseButton.querySelector('i');
 
     // Reproducir audio al cargar la página
     audio.play();
 
-    playButton.addEventListener('click', () => {
-        audio.play();
-        playButton.style.display = 'none';
-        pauseButton.style.display = 'inline-block';
-    });
-
-    pauseButton.addEventListener('click', () => {
-        audio.pause();
-        pauseButton.style.display = 'none';
-        playButton.style.display = 'inline-block';
+    playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseIcon.classList.remove('fa-play');
+            playPauseIcon.classList.add('fa-pause');
+        } else {
+            audio.pause();
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+        }
     });
 
     stopButton.addEventListener('click', () => {
         audio.pause();
         audio.currentTime = 0;
-        pauseButton.style.display = 'none';
-        playButton.style.display = 'inline-block';
+        playPauseIcon.classList.remove('fa-pause');
+        playPauseIcon.classList.add('fa-play');
     });
 });

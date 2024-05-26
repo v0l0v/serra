@@ -184,6 +184,7 @@ select, textarea {
     -moz-text-align-last: center; /* Centra el texto en Firefox */
 }
 
+/* CSS para los botones de control de audio */
 .audio-control-container {
     display: flex;
     justify-content: center; /* Centrar los botones horizontalmente */
@@ -192,9 +193,9 @@ select, textarea {
 }
 
 .audio-control {
-   
+    background-color: rgb(99, 1, 26); /* Fondo del botón */
     color: white;
-    border: 1px;
+    border: none;
     font-size: 24px;
     width: 50px; /* Ancho del botón */
     height: 50px; /* Alto del botón */

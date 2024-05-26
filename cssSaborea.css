@@ -219,3 +219,15 @@ select, textarea {
 .audio-control:hover {
     background-color: #670418; /* Cambiar el color al pasar el ratón */
 }
+
+/* Añadir esto a cssSaborea.css o dentro de una etiqueta <style> en el <head> */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

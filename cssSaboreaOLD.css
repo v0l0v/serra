@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -12,9 +13,9 @@ body {
 }
 
 p {
-    text-align: justify; /* or other alignment properties like left, right, center */
-    white-space: pre-wrap; /* Preserves whitespace and line breaks */
-}
+            text-align: justify; /* or other alignment properties like left, right, center */
+            white-space: pre-wrap; /* Preserves whitespace and line breaks */
+        }
 
 h1, h2, h4 {
     color: white;
@@ -27,6 +28,7 @@ h1 {
     margin-bottom: 2px;
     width: 75%;
     text-align: center; /* Centra el texto */
+
 }
 
 h2 {
@@ -82,10 +84,13 @@ header {
     margin-bottom: 10px;
 }
 
+
 #restaurantsList li a {
     color: white;      /* Establece el color del texto a blanco */
     font-weight: bold; /* Hace que la fuente sea negrita */
 }
+
+
 
 button {
     background-color: rgb(99, 1, 26);
@@ -115,6 +120,7 @@ button {
     border: none;
     padding: 10px;    /* Asegúrate de que el padding sea adecuado */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+
 }
 
 .button-container button.active i {
@@ -136,8 +142,11 @@ select {
     -moz-text-align-last: center; /* Centra el texto en Firefox */
 }
 
+
+
 textarea {
     width: 100%; /* Ajustar al ancho del contenedor */
+    
     margin: 5px; /* Ajustar según lo necesario */
     padding: 8px; /* Espaciado interno para hacerlo visualmente consistente con los selectores */
     border: 1px solid #cccccc; /* Borde similar al de los selectores */
@@ -153,16 +162,17 @@ textarea {
     margin-bottom: 10px; /* Espacio debajo del textarea, ajustar según sea necesario */
     text-align-last: center; /* Centra el texto */
     -moz-text-align-last: center; /* Centra el texto en Firefox */
+ 
 }
 
 textarea:focus {
     border-color: #0056b3; /* Color de borde al enfocar, ajustar para que coincida con el estilo de los selectores */
     outline: none; /* Eliminar el contorno predeterminado para mantener el estilo consistente */
 }
-
 select, textarea {
     width: 100%; /* o otra medida específica si es necesario */
 }
+
 
 #compartir-btn {
     background-color: #4caf50;
@@ -210,7 +220,7 @@ select, textarea {
     background-color: #670418; /* Cambiar el color al pasar el ratón */
 }
 
-/* Estilos para la imagen */
+/* Añadir esto a cssSaborea.css o dentro de una etiqueta <style> en el <head> */
 .image-container {
     text-align: center;
     margin: 20px 0;
@@ -220,5 +230,4 @@ select, textarea {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

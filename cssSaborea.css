@@ -12,6 +12,11 @@ body {
     color: white;
 }
 
+p {
+            text-align: justify; /* or other alignment properties like left, right, center */
+            white-space: pre-wrap; /* Preserves whitespace and line breaks */
+        }
+
 h1, h2, h4 {
     color: white;
     font-family: 'Roboto', sans-serif;

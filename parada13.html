@@ -16,10 +16,6 @@
         </a>
     </header>
 
-    <button onclick="document.getElementById('audio').play()">Reproducir audio</button>
-    <audio id="audio" src="parada13/parada13.mp3" loop>
-        Tu navegador no soporta la etiqueta de audio.
-    </audio>
     <div class="button-container">
     <button onclick="redirectToBestRated()" style="background: none; border: none;" title="Ver el mejor valorado">
         <i class="fa fa-star" aria-hidden="true"></i>
@@ -32,9 +28,11 @@
     </button>
 </div>
 <h1>Parada 13</h1>
-<h2><p>
-    Bienvenido a la parada numero trece, la parada de nuestras tradiciones.
-</p></h2>
+<p>Esta página reproduce un archivo MP3 automáticamente al entrar. Usa el botón para controlar la reproducción.</p>
+    <button id="audioControl">Pausar Música</button>
+    <audio id="audio" src="parada13/parada13.mp3" loop>
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
 
 </body>
 </html>

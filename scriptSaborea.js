@@ -1,123 +1,123 @@
 
 const restaurants = [
     { 
-        name: "Parada 3", 
+        name: "Parada 1", 
         latitude: 39.4020715, 
         longitude: -0.3895136, 
-        url: "parada3.html", 
-        imageUrl: "parada3/parada3.png",
+        url: "parada1.html", 
+        imageUrl: "parada1/parada1.png",
         rating: 1
     },
     { 
-        name: "Parada 4", 
+        name: "Parada 2", 
         latitude: 39.3994776, 
         longitude: -0.3913431, 
-        url: "parada4.html", 
-        imageUrl: "parada4/parada4.png",
+        url: "parada2.html", 
+        imageUrl: "parada2/parada2.png",
         rating: 2
     },
     { 
-        name: "Parada 14", 
+        name: "Parada 3", 
         latitude: 39.400659,
         longitude: -0.3945479, 
-        url: "parada14.html", 
-        imageUrl: "parada14/parada14.png",
+        url: "parada3.html", 
+        imageUrl: "parada3/parada3.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 4", 
+        latitude: 39.3996542,
+        longitude: -0.3948841, 
+        url: "parada4.html", 
+        imageUrl: "parada4/parada4.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 5", 
+        latitude: 39.398679, 
+        longitude: -0.3950342, 
+         url: "parada5.html", 
+        imageUrl: "parada5/parada5.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 6", 
+        latitude: 39.3993797, 
+        longitude: -0.3969805, 
+         url: "parada6.html", 
+        imageUrl: "parada6/parada6.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 7", 
+        latitude: 39.3997543, 
+        longitude: -0.3967426, 
+         url: "parada7.html", 
+        imageUrl: "parada7/parada7.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 8", 
+        latitude: 39.4012488, 
+        longitude: -0.3944826, 
+         url: "parada8.html", 
+        imageUrl: "parada8/parada8.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 9", 
+        latitude: 39.4015487, 
+        longitude: -0.3925008, 
+        url: "parada9.html", 
+        imageUrl: "parada9/parada9.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 10", 
+        latitude: 39.400603, 
+        longitude: -0.3978505, 
+         url: "parada10.html", 
+        imageUrl: "parada10/parada10.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 11", 
+        latitude: 39.397548, 
+        longitude: -0.3976812, 
+        url: "parada11.html", 
+        imageUrl: "parada11/parada11.png",
+        rating: 1 
+    },
+    { 
+        name: "Parada 12", 
+        latitude: 39.3960963, 
+        longitude: -0.394664, 
+         url: "parada12.html", 
+        imageUrl: "parada12/parada12.png",
         rating: 1 
     },
     { 
         name: "Parada 13", 
-        latitude: 39.3996542,
-        longitude: -0.3948841, 
-        url: "parada13.html", 
+        latitude: 39.395143, 
+        longitude: -0.3964856, 
+         url: "parada13.html", 
         imageUrl: "parada13/parada13.png",
         rating: 1 
     },
     { 
-        name: "Restaurante Kamaka", 
-        latitude: 39.398679, 
-        longitude: -0.3950342, 
-        url: "https://gila.ovh/saborea/restaurante_kamaka.html", 
-        imageUrl: "https://gila.ovh/saborea/rkamaka/rkamaka.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante Castilla", 
-        latitude: 39.3993797, 
-        longitude: -0.3969805, 
-        url: "https://gila.ovh/saborea/restaurante_castilla.html", 
-        imageUrl: "https://gila.ovh/saborea/rcastilla/rcastilla.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante El Ravachol", 
-        latitude: 39.3997543, 
-        longitude: -0.3967426, 
-        url: "https://gila.ovh/saborea/restaurante_elravachol.html", 
-        imageUrl: "https://gila.ovh/saborea/relravachol/relravachol.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante Los Pines", 
-        latitude: 39.4012488, 
-        longitude: -0.3944826, 
-        url: "https://gila.ovh/saborea/restaurante_lospines.html", 
-        imageUrl: "https://gila.ovh/saborea/rlospines/rlospines.png",
-        rating: 1 
-    },
-    { 
-        name: "Parada 1", 
-        latitude: 39.4015487, 
-        longitude: -0.3925008, 
-        url: "parada1.html", 
-        imageUrl: "parada1/parada1.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante La Casa Vella", 
-        latitude: 39.400603, 
-        longitude: -0.3978505, 
-        url: "https://gila.ovh/saborea/restaurante_lacasavella.html", 
-        imageUrl: "https://gila.ovh/saborea/rlacasavella/rlacasavella.png",
-        rating: 1 
-    },
-    { 
-        name: "Parada 2", 
-        latitude: 39.397548, 
-        longitude: -0.3976812, 
-        url: "parada2.html", 
-        imageUrl: "parada2/parada2.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante La Esquina", 
-        latitude: 39.3960963, 
-        longitude: -0.394664, 
-        url: "https://gila.ovh/saborea/restaurante_laesquina.html", 
-        imageUrl: "https://gila.ovh/saborea/rlaesquina/rlaesquina.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante La Bonita", 
-        latitude: 39.395143, 
-        longitude: -0.3964856, 
-        url: "https://gila.ovh/saborea/restaurante_labonita.html", 
-        imageUrl: "https://gila.ovh/saborea/rlabonita/rlabonita.png",
-        rating: 1 
-    },
-    { 
-        name: "Restaurante Villanueva", 
+        name: "Parada 14", 
         latitude: 39.397268, 
         longitude: -0.389776, 
-        url: "https://gila.ovh/saborea/restaurante_villanueva.html", 
-        imageUrl: "https://gila.ovh/saborea/rvillanueva/rvillanueva.png",
+         url: "parada14.html", 
+        imageUrl: "parada14/parada14.png",
         rating: 1 
     },
     { 
-        name: "Restaurante Gila", 
+        name: "Parada 15", 
         latitude: 39.397548, 
         longitude: -0.3950342, 
-        url: "https://gila.ovh/saborea/restaurante_gila.html", 
-        imageUrl: "https://gila.ovh/saborea/rgila/rgila.png",
+         url: "parada15.html", 
+        imageUrl: "parada15/parada15.png",
         rating: 1 
     },
     // Añade los demás restaurantes aquí con su respectiva imagen URL
@@ -177,7 +177,7 @@ restaurants.forEach(restaurant => {
 });
 
 // Conexión WebSocket
-const socket = new WebSocket('ws://gila.ovh/saborea');
+const socket = new WebSocket('wss://gila.ovh/saborea');
 
 socket.onopen = function(event) {
     console.log('Conexión WebSocket establecida');

@@ -81,7 +81,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 11", 
+        name: "Millena, en el Valle de Travadell", 
         latitude: 39.397548, 
         longitude: -0.3976812, 
         url: "parada11.html", 
@@ -97,7 +97,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 13", 
+        name: "Amor Propio", 
         latitude: 39.395143, 
         longitude: -0.3964856, 
          url: "parada13.html", 
@@ -105,7 +105,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 14", 
+        name: "Iglesia Nuestra Señora del Rosario", 
         latitude: 39.397268, 
         longitude: -0.389776, 
          url: "parada14.html", 

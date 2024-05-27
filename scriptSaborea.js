@@ -127,16 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
     findRestaurants(); toggleList()
 });
 
-function handleGeoLocation(callback) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callback, () => {
-            alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
-        });
-    } else {
-        alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
-    }
-}
-
 function findRestaurants() {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(
@@ -158,6 +148,10 @@ function findRestaurants() {
     }
 }
 
+function toggleList() {
+    list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
+}
+
 // Cache DOM element to avoid repeated lookups
 const list = document.getElementById('restaurantsList');
 list.innerHTML = ''; // Limpiar lista existente
@@ -177,7 +171,7 @@ restaurants.forEach(restaurant => {
 });
 
 // Conexión WebSocket
-const socket = new WebSocket('wss://gila.ovh/saborea');
+const socket = new WebSocket('wss://gila.ovh/rda');
 
 socket.onopen = function(event) {
     console.log('Conexión WebSocket establecida');
@@ -211,7 +205,7 @@ socket.onclose = function() {
 
 function connectWebSocket() {
     // Intenta reconectar
-    socket = new WebSocket('ws://gila.ovh/saborea');
+    socket = new WebSocket('ws://gila.ovh/rda');
 }
 
 // Agrega validación para asegurarte de que los datos recibidos a través de WebSocket sean válidos.
@@ -282,6 +276,16 @@ function simplifiedDistance(lat1, lon1, lat2, lon2) {
     return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
 }
 
+function handleGeoLocation(callback) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(callback, () => {
+            alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
+        });
+    } else {
+        alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
+    }
+}
+
 function redirectToNearest() {
     handleGeoLocation((position) => {
         const { latitude, longitude } = position.coords;
@@ -302,8 +306,5 @@ function redirectToBestRated() {
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
 
-function toggleList() {
-    list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
-}
 
 

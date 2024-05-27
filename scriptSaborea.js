@@ -73,7 +73,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 10", 
+        name: "Puente Viejo", 
         latitude: 39.400603, 
         longitude: -0.3978505, 
          url: "parada10.html", 

@@ -89,7 +89,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 12", 
+        name: "Mercado del pueblo", 
         latitude: 39.3960963, 
         longitude: -0.394664, 
          url: "parada12.html", 

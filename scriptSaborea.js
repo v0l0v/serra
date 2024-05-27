@@ -113,7 +113,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 15", 
+        name: "Iglesia de San Lorenzo", 
         latitude: 39.397548, 
         longitude: -0.3950342, 
          url: "parada15.html", 

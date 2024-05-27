@@ -188,7 +188,7 @@ select, textarea {
 }
 
 .audio-control {
-    background-color: rgb(99, 1, 26); /* Fondo del botón */
+    background-color: #ffcab5; /* Fondo del botón */
     color: white;
     border: none;
     font-size: 24px;

@@ -45,6 +45,10 @@ h4 {
     font-size: 16px;
     margin-top: 2px;
     text-align: center; /* Centra el texto */
+    width: 80%; /* Ajusta el ancho al 80% del contenedor */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+    padding: 10px; /* Añade un poco de padding para separación */
 }
 
 header {

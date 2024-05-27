@@ -105,7 +105,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Iglesia Nuestra Señora del Rosario", 
+        name: "Iglesia N.S. del Rosario", 
         latitude: 39.397268, 
         longitude: -0.389776, 
          url: "parada14.html", 

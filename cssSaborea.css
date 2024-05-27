@@ -189,7 +189,7 @@ select, textarea {
 
 .audio-control {
     background-color: rgb(156,188,186); /* Fondo del botón */
-    color: rgb(255,203,182);
+    color: white;
     border: none;
     font-size: 24px;
     width: 50px; /* Ancho del botón */
@@ -207,7 +207,7 @@ select, textarea {
 }
 
 .audio-control:hover {
-    background-color: #670418; /* Cambiar el color al pasar el ratón */
+    background-color: rgb(255,203,182); /* Cambiar el color al pasar el ratón */
 }
 
 /* Estilos para la imagen */

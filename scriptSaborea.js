@@ -222,6 +222,7 @@ socket.onmessage = function(event) {
     }
 };
 
+
 function displayRestaurants(userLat, userLng) {
     restaurants.sort((a, b) => compareRestaurants(a, b, userLat, userLng));
 
@@ -244,17 +245,9 @@ function renderRestaurant(restaurant, userLat, userLng) {
     item.style = "display: flex; align-items: center; margin-bottom: 10px;"; // Estilos para alinear los elementos en una fila
 
     const link = document.createElement('a');
+    link.href = restaurant.url;
+    
     link.style = "display: flex; align-items: center; text-decoration: none; color: inherit;"; // Estilos para el enlace
-
-    if (restaurant.name === "Castell de Cabres") {
-        link.href = "#"; // No permite acceso directo
-        link.onclick = (e) => {
-            e.preventDefault();
-            checkDistanceToParada2(userLat, userLng);
-        };
-    } else {
-        link.href = restaurant.url;
-    }
 
     const image = document.createElement('img');
     image.src = restaurant.imageUrl; // Usa la URL de la imagen específica para cada restaurante
@@ -274,16 +267,6 @@ function renderRestaurant(restaurant, userLat, userLng) {
 
     item.appendChild(link);
     list.appendChild(item);
-}
-
-function checkDistanceToParada2(userLat, userLng) {
-    const parada2 = restaurants.find(restaurant => restaurant.name === "Castell de Cabres");
-    const distance = simplifiedDistance(userLat, userLng, parada2.latitude, parada2.longitude) * 1000; // Convertimos a metros
-    if (distance <= 100) {
-        window.location.href = parada2.url;
-    } else {
-        alert("Estás demasiado lejos para poder ver el contenido de Castell de Cabres. Debes estar a menos de 100 metros.");
-    }
 }
 
 // Simplified distance calculation to reduce complexity
@@ -319,4 +302,9 @@ function getNearestRestaurant(userLat, userLng) {
 
 function redirectToBestRated() {
     const maxRating = Math.max(...restaurants.map(r => r.rating));
-    const bestRatedRestaurants = restaurants.filter
+    const bestRatedRestaurants = restaurants.filter(r => r.rating === maxRating);
+    window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
+}
+
+
+

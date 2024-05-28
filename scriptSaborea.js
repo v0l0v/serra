@@ -17,7 +17,7 @@ const restaurants = [
         rating: 2
     },
     { 
-        name: "Parada 3", 
+        name: "Tollos", 
         latitude: 39.400659,
         longitude: -0.3945479, 
         url: "parada3.html", 
@@ -25,7 +25,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 4", 
+        name: "Sacañet", 
         latitude: 39.3996542,
         longitude: -0.3948841, 
         url: "parada4.html", 

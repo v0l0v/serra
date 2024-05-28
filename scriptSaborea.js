@@ -263,7 +263,60 @@ function renderRestaurant(restaurant, userLat, userLng) {
 
     const name = document.createElement('span');
     name.textContent = restaurant.name;
-    name.style = "flex-grow: 1; margin-right: 10px;"; // Flex
+    name.style = "flex-grow: 1; margin-right: 10px;"; // Flex-grow para que el nombre ocupe el espacio disponible
 
+    const distance = document.createElement('span');
+    distance.textContent = `${distMeters} m`;
 
+    link.appendChild(image); // Primero la imagen
+    link.appendChild(name); // Segundo el nombre
+    link.appendChild(distance); // Tercero la distancia
 
+    item.appendChild(link);
+    list.appendChild(item);
+}
+
+function checkDistanceToParada2(userLat, userLng) {
+    const parada2 = restaurants.find(restaurant => restaurant.name === "Castell de Cabres");
+    const distance = simplifiedDistance(userLat, userLng, parada2.latitude, parada2.longitude) * 1000; // Convertimos a metros
+    if (distance <= 100) {
+        window.location.href = parada2.url;
+    } else {
+        alert("Estás demasiado lejos para poder ver el contenido de Castell de Cabres. Debes estar a menos de 100 metros.");
+    }
+}
+
+// Simplified distance calculation to reduce complexity
+function simplifiedDistance(lat1, lon1, lat2, lon2) {
+    const x = lat2 - lat1;
+    const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
+    return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
+}
+
+function handleGeoLocation(callback) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(callback, () => {
+            alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
+        });
+    } else {
+        alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
+    }
+}
+
+function redirectToNearest() {
+    handleGeoLocation((position) => {
+        const { latitude, longitude } = position.coords;
+        window.location.href = getNearestRestaurant(latitude, longitude).url;
+    });
+}
+
+function getNearestRestaurant(userLat, userLng) {
+    return restaurants.reduce((nearest, restaurant) => {
+        const dist = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
+        return (dist < nearest.dist) ? { dist, restaurant } : nearest;
+    }, { dist: Infinity }).restaurant;
+}
+
+function redirectToBestRated() {
+    const maxRating = Math.max(...restaurants.map(r => r.rating));
+    const bestRatedRestaurants = restaurants.filter

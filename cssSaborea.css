@@ -88,7 +88,7 @@ header {
 
 #restaurantsList li a {
     color: rgb(0, 0, 0);      /* Establece el color del texto a negro */
-    font-weight: bold; /* Hace que la fuente sea negrita */
+    
 }
 
 button {

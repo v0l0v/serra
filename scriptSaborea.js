@@ -41,7 +41,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 6", 
+        name: "Peña Saganta", 
         latitude: 39.3993797, 
         longitude: -0.3969805, 
          url: "parada6.html", 

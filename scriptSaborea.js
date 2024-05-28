@@ -9,7 +9,7 @@ const restaurants = [
         rating: 1
     },
     { 
-        name: "Parada 2", 
+        name: "Castell de Cabres", 
         latitude: 39.3994776, 
         longitude: -0.3913431, 
         url: "parada2.html", 

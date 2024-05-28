@@ -3,33 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Enlaces a fuentes y estilos CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-    <title>Parada 3</title>
     <link href="cssSaborea.css" rel="stylesheet">
+    
+    <!-- Script para el control de audio -->
+    <script src="audioControl.js"></script>
+    
+    <title>Mercado del pueblo</title>
 </head>
 <body>
+    <!-- Encabezado con logo -->
     <header>
         <a href="index.html">
             <img src="logorda.png" alt="Logo Ruta del Amor" id="logo-rda">
         </a>
     </header>
-				<div class="button-container">
-    <button onclick="redirectToBestRated()" style="background: none; border: none;" title="Ver el mejor valorado">
-        <i class="fa fa-star" aria-hidden="true"></i>
-    </button>
-    <button onclick="redirectToNearest()" style="background: none; border: none;" title="Ver el más cercano">
-        <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
-    </button>
-    <button onclick="window.location.href='registro.html'" style="background: none; border: none;" title="Registro de visitas">
-        <i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
-    </button>
-</div>
-<h1>Parada 3</h1>
-<h2><p>
-    Bienvenido a la parada numero tres, la parada de nuestras tradiciones.
-</p></h2>
+    
+    
+    <!-- Título principal -->
+    <h1>Mercado del pueblo</h1>
 
+    <!-- Controles de audio -->
+    <div class="audio-control-container">
+        <button id="playPauseButton" class="audio-control" title="Pausar">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button id="stopButton" class="audio-control" title="Detener">
+            <i class="fas fa-stop"></i>
+        </button>
+    </div>
+    
+    <!-- Elemento de audio -->
+    <audio id="audio" src="parada12/parada12.mp3" autoplay loop>
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+    
+    <!-- Imagen añadida -->
+    <div class="image-container">
+        <img src="parada12/imagen12a.jpg" alt="Mercado del pueblo" class="responsive-image">
+    </div>
+    
+
+    <!-- Texto -->
+    <div>
+        <h4>
+            <br>
+            <br>
+
+            Situada en el centro de la plaza, el Mercado del pueblo, del siglo XVI, tiene un campanario que cuenta con dos campanas
+            que se encuentran, una, mirando al norte, y la otra, al sur.
+            La campana grande, del año 1942, está dedicada a Sant Llorenç y la pequeña, 
+            que data de 1799, a Santa Àgata.            
+
+            <br>
+            <br>
+        </h4>
+    </div>
+    <script src="scriptSaborea.js"></script>
 </body>
 </html>

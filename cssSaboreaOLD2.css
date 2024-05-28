@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -8,16 +9,16 @@ body {
     background: url('fondorda.webp') no-repeat center center fixed;
     background-size: cover;
     position: relative;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 p {
-    text-align: justify; /* or other alignment properties like left, right, center */
-    white-space: pre-wrap; /* Preserves whitespace and line breaks */
-}
+            text-align: justify; /* or other alignment properties like left, right, center */
+            white-space: pre-wrap; /* Preserves whitespace and line breaks */
+        }
 
 h1, h2, h4 {
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -27,10 +28,11 @@ h1 {
     margin-bottom: 2px;
     width: 75%;
     text-align: center; /* Centra el texto */
+
 }
 
 h2 {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 24px;
     text-align: center;
     width: 75%;
@@ -42,13 +44,9 @@ h2 {
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 12px;
     margin-top: 2px;
     text-align: center; /* Centra el texto */
-    width: 80%; /* Ajusta el ancho al 80% del contenedor */
-    margin-left: auto; /* Centra horizontalmente */
-    margin-right: auto; /* Centra horizontalmente */
-    padding: 10px; /* Añade un poco de padding para separación */
 }
 
 header {
@@ -86,10 +84,13 @@ header {
     margin-bottom: 10px;
 }
 
+
 #restaurantsList li a {
-    color: rgb(0, 0, 0);      /* Establece el color del texto a blanco */
+    color: white;      /* Establece el color del texto a blanco */
     font-weight: bold; /* Hace que la fuente sea negrita */
 }
+
+
 
 button {
     background-color: rgb(99, 1, 26);
@@ -119,6 +120,7 @@ button {
     border: none;
     padding: 10px;    /* Asegúrate de que el padding sea adecuado */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+
 }
 
 .button-container button.active i {
@@ -140,8 +142,11 @@ select {
     -moz-text-align-last: center; /* Centra el texto en Firefox */
 }
 
+
+
 textarea {
     width: 100%; /* Ajustar al ancho del contenedor */
+    
     margin: 5px; /* Ajustar según lo necesario */
     padding: 8px; /* Espaciado interno para hacerlo visualmente consistente con los selectores */
     border: 1px solid #cccccc; /* Borde similar al de los selectores */
@@ -151,22 +156,23 @@ textarea {
     font-family: 'Roboto', sans-serif; /* Asumiendo que Roboto es la fuente utilizada en los selectores */
     font-size: 16px; /* Tamaño de fuente similar al de los selectores */
     background-color: rgb(99, 1, 26); /* Fondo blanco o el que corresponda al estilo del formulario */
-    color: rgb(0, 0, 0); /* Color del texto, ajustar si es necesario */
+    color: rgb(255, 255, 255); /* Color del texto, ajustar si es necesario */
     resize: vertical; /* Desactivar el redimensionamiento para mantener un tamaño fijo */
     box-sizing: border-box; /* Incluir padding y border en el cálculo del ancho */
     margin-bottom: 10px; /* Espacio debajo del textarea, ajustar según sea necesario */
     text-align-last: center; /* Centra el texto */
     -moz-text-align-last: center; /* Centra el texto en Firefox */
+ 
 }
 
 textarea:focus {
     border-color: #0056b3; /* Color de borde al enfocar, ajustar para que coincida con el estilo de los selectores */
     outline: none; /* Eliminar el contorno predeterminado para mantener el estilo consistente */
 }
-
 select, textarea {
     width: 100%; /* o otra medida específica si es necesario */
 }
+
 
 #compartir-btn {
     background-color: #4caf50;
@@ -192,7 +198,7 @@ select, textarea {
 }
 
 .audio-control {
-    background-color: rgb(156,188,186); /* Fondo del botón */
+    background-color: rgb(99, 1, 26); /* Fondo del botón */
     color: white;
     border: none;
     font-size: 24px;
@@ -211,18 +217,17 @@ select, textarea {
 }
 
 .audio-control:hover {
-    background-color: rgb(255,203,182); /* Cambiar el color al pasar el ratón */
+    background-color: #670418; /* Cambiar el color al pasar el ratón */
 }
 
-/* Estilos para la imagen */
+/* Añadir esto a cssSaborea.css o dentro de una etiqueta <style> en el <head> */
 .image-container {
     text-align: center;
     margin: 20px 0;
 }
 
 .responsive-image {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

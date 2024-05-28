@@ -246,7 +246,7 @@ function renderRestaurant(restaurant, userLat, userLng) {
 
     const link = document.createElement('a');
     link.href = restaurant.url;
-    link.target = "_blank"; // para abrir en una nueva pestaña
+    
     link.style = "display: flex; align-items: center; text-decoration: none; color: inherit;"; // Estilos para el enlace
 
     const image = document.createElement('img');

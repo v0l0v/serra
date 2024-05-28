@@ -49,7 +49,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 7", 
+        name: "La Cueva de Zanzano", 
         latitude: 39.3997543, 
         longitude: -0.3967426, 
          url: "parada7.html", 

@@ -1,7 +1,7 @@
 
 const restaurants = [
     { 
-        name: "Parada 1", 
+        name: "El Valle de Seta", 
         latitude: 39.4020715, 
         longitude: -0.3895136, 
         url: "parada1.html", 
@@ -81,7 +81,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Millena, en el Valle de Travadell", 
+        name: "El Valle de Travadell", 
         latitude: 39.397548, 
         longitude: -0.3976812, 
         url: "parada11.html", 

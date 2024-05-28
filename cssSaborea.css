@@ -110,7 +110,7 @@ button {
 
 .button-container i {
     font-size: 24px;  /* Ajusta el tamaño del icono si es necesario */
-    color: black;     /* Cambia el color a blanco */
+    color:  rgb(99, 1, 26);     /* Cambia el color a blanco */
     cursor: pointer;
 }
 

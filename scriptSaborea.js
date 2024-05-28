@@ -33,7 +33,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 5", 
+        name: "Espadilla", 
         latitude: 39.398679, 
         longitude: -0.3950342, 
          url: "parada5.html", 

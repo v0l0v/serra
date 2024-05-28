@@ -222,7 +222,6 @@ socket.onmessage = function(event) {
     }
 };
 
-
 function displayRestaurants(userLat, userLng) {
     restaurants.sort((a, b) => compareRestaurants(a, b, userLat, userLng));
 
@@ -245,9 +244,17 @@ function renderRestaurant(restaurant, userLat, userLng) {
     item.style = "display: flex; align-items: center; margin-bottom: 10px;"; // Estilos para alinear los elementos en una fila
 
     const link = document.createElement('a');
-    link.href = restaurant.url;
-    
     link.style = "display: flex; align-items: center; text-decoration: none; color: inherit;"; // Estilos para el enlace
+
+    if (restaurant.name === "Castell de Cabres") {
+        link.href = "#"; // No permite acceso directo
+        link.onclick = (e) => {
+            e.preventDefault();
+            checkDistanceToParada2(userLat, userLng);
+        };
+    } else {
+        link.href = restaurant.url;
+    }
 
     const image = document.createElement('img');
     image.src = restaurant.imageUrl; // Usa la URL de la imagen específica para cada restaurante
@@ -256,55 +263,7 @@ function renderRestaurant(restaurant, userLat, userLng) {
 
     const name = document.createElement('span');
     name.textContent = restaurant.name;
-    name.style = "flex-grow: 1; margin-right: 10px;"; // Flex-grow para que el nombre ocupe el espacio disponible
-
-    const distance = document.createElement('span');
-    distance.textContent = `${distMeters} m`;
-
-    link.appendChild(image); // Primero la imagen
-    link.appendChild(name); // Segundo el nombre
-    link.appendChild(distance); // Tercero la distancia
-
-    item.appendChild(link);
-    list.appendChild(item);
-}
-
-// Simplified distance calculation to reduce complexity
-function simplifiedDistance(lat1, lon1, lat2, lon2) {
-    const x = lat2 - lat1;
-    const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
-    return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
-}
-
-function handleGeoLocation(callback) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callback, () => {
-            alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
-        });
-    } else {
-        alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
-    }
-}
-
-function redirectToNearest() {
-    handleGeoLocation((position) => {
-        const { latitude, longitude } = position.coords;
-        window.location.href = getNearestRestaurant(latitude, longitude).url;
-    });
-}
-
-function getNearestRestaurant(userLat, userLng) {
-    return restaurants.reduce((nearest, restaurant) => {
-        const dist = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
-        return (dist < nearest.dist) ? { dist, restaurant } : nearest;
-    }, { dist: Infinity }).restaurant;
-}
-
-function redirectToBestRated() {
-    const maxRating = Math.max(...restaurants.map(r => r.rating));
-    const bestRatedRestaurants = restaurants.filter(r => r.rating === maxRating);
-    window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
-}
+    name.style = "flex-grow: 1; margin-right: 10px;"; // Flex
 
 
 

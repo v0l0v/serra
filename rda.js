@@ -123,15 +123,21 @@ const restaurants = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); 
+    const list = document.getElementById('restaurantsList');
+    if (!list) {
+        console.error('Elemento restaurantsList no encontrado');
+        return;
+    }
+    findRestaurants(list);
+    connectWebSocket(list);
 });
 
-function findRestaurants() {
+function findRestaurants(list) {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
-                displayRestaurants(latitude, longitude);
+                displayRestaurants(list, latitude, longitude);
             },
             (error) => {
                 alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
@@ -147,87 +153,12 @@ function findRestaurants() {
     }
 }
 
-// Cache DOM element to avoid repeated lookups
-const list = document.getElementById('restaurantsList');
-list.innerHTML = ''; // Limpiar lista existente
-
-restaurants.forEach(restaurant => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `
-        <div class="restaurant-entry">
-            <img src="${restaurant.imageUrl}" alt="Logo de ${restaurant.name}" class="logo"> <!-- CORRECTO -->
-            <div class="info">
-                <span class="name">${restaurant.name}</span>
-            </div>
-        </div>
-    `;
-    list.appendChild(listItem);
-});
-
-// Conexión WebSocket
-const socket = new WebSocket('wss://gila.ovh/rutadelamor');
-
-socket.onopen = function(event) {
-    console.log('Conexión WebSocket establecida');
-};
-
-socket.onmessage = function(event) {
-    try {
-        const data = JSON.parse(event.data);
-        if (data.latitude && data.longitude) {
-            displayRestaurants(data.latitude, data.longitude);
-        } else {
-            console.error('Formato de datos incorrecto:', data);
-        }
-    } catch (error) {
-        console.error('Error procesando los datos:', error);
-    }
-};
-
-socket.onerror = function(error) {
-    console.error('WebSocket error:', error);
-};
-
-// RECONEXIÓN AUTOMÁTICA: No se vuelve a llamar a `connectWebSocket`. Propongo incluir la llamada a `connectWebSocket`.
-socket.onclose = function() {
-    console.log('WebSocket cerrado. Reintentando conexión...');
-    setTimeout(connectWebSocket, 5000); // Reintentar conexión cada 5 segundos
-};
-
-function connectWebSocket() {
-    socket = new WebSocket('wss://gila.ovh/rutadelamor');
-    socket.onopen = function(event) {
-        console.log('Conexión WebSocket restablecida');
-    };
-    socket.onmessage = function(event) {
-        try {
-            const data = JSON.parse(event.data);
-            if (data.latitude && data.longitude) {
-                displayRestaurants(data.latitude, data.longitude);
-            } else {
-                console.error('Formato de datos incorrecto:', data);
-            }
-        } catch (error) {
-            console.error('Error procesando los datos:', error);
-        }
-    };
-    socket.onerror = function(error) {
-        console.error('WebSocket error:', error);
-    };
-    socket.onclose = function() {
-        console.log('WebSocket cerrado. Reintentando conexión...');
-        setTimeout(connectWebSocket, 5000);
-    };
-}
-connectWebSocket(); // Llamar a la función para conectar el WebSocket al inicio
-
-// DISPLAY RESTAURANTS
-function displayRestaurants(userLat, userLng) {
+function displayRestaurants(list, userLat, userLng) {
     restaurants.sort((a, b) => compareRestaurants(a, b, userLat, userLng));
 
     list.innerHTML = ''; // Limpiar entradas anteriores
     restaurants.forEach(restaurant => {
-        renderRestaurant(restaurant, userLat, userLng);
+        renderRestaurant(list, restaurant, userLat, userLng);
     });
 }
 
@@ -237,7 +168,7 @@ function compareRestaurants(a, b, userLat, userLng) {
     return distA !== distB ? distA - distB : b.rating - a.rating;
 }
 
-function renderRestaurant(restaurant, userLat, userLng) {
+function renderRestaurant(list, restaurant, userLat, userLng) {
     const distKm = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
     const distMeters = (distKm * 1000).toFixed(0);
     const item = document.createElement('li');
@@ -302,4 +233,35 @@ function redirectToBestRated() {
     const maxRating = Math.max(...restaurants.map(r => r.rating));
     const bestRatedRestaurants = restaurants.filter(r => r.rating === maxRating);
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
+}
+
+// WebSocket connection and handling
+function connectWebSocket(list) {
+    const socket = new WebSocket('wss://gila.ovh/rutadelamor');
+
+    socket.onopen = function(event) {
+        console.log('Conexión WebSocket establecida');
+    };
+
+    socket.onmessage = function(event) {
+        try {
+            const data = JSON.parse(event.data);
+            if (data.latitude && data.longitude) {
+                displayRestaurants(list, data.latitude, data.longitude);
+            } else {
+                console.error('Formato de datos incorrecto:', data);
+            }
+        } catch (error) {
+            console.error('Error procesando los datos:', error);
+        }
+    };
+
+    socket.onerror = function(error) {
+        console.error('WebSocket error:', error);
+    };
+
+    socket.onclose = function() {
+        console.log('WebSocket cerrado. Reintentando conexión...');
+        setTimeout(() => connectWebSocket(list), 5000); // Reintentar conexión cada 5 segundos
+    };
 }

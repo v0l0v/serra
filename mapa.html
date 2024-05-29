@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa de Restaurantes</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="rda.css" />
     <style>
         #map {
-            height: 100vh;
+            height: calc(100vh - 100px);
             width: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background: url('fondorda.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(0, 0, 0);
         }
     </style>
 </head>
 <body>
+    <header>
+        <a href="index.html">
+            <img src="logorda.png" alt="Logo Ruta del Amor" id="logo-rda">
+        </a>
+    </header>
+    <h1>Mapa de Restaurantes</h1>
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="mapa.js"></script>

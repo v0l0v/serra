@@ -186,6 +186,3 @@ if (navigator.geolocation) {
 } else {
     alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
 }
-
-// Recargar la vista al finalizar el arrastre
-// Comentado

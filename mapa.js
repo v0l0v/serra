@@ -187,10 +187,3 @@ if (navigator.geolocation) {
     alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
 }
 
-// Recargar la vista al finalizar el arrastre
-map.on('dragend', function() {
-    if (userPosition) {
-        const currentZoom = map.getZoom();
-        map.setView(userPosition, currentZoom, { animate: false }); // Centrar el mapa en la posición del usuario
-    }
-});

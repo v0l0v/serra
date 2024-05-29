@@ -65,7 +65,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 9", 
+        name: "Pavías", 
         latitude: 39.4015487, 
         longitude: -0.3925008, 
         url: "parada9.html", 

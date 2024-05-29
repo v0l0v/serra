@@ -1,0 +1,26 @@
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: url('fondorda.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+#map {
+    height: 90vh; /* Ajuste para dejar espacio para el padding */
+    width: 90%; /* Ajuste para dejar espacio para el padding */
+    margin: 5%; /* Espaciado del 5% por cada lado */
+    box-sizing: border-box;
+}
+.logo-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+</style>

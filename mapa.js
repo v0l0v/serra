@@ -123,7 +123,7 @@ const restaurants = [
 ];
 
 // Inicializar el mapa
-const map = L.map('map').setView([39.4, -0.39], 13); // Coordenadas centrales y zoom
+const map = L.map('map').setView([39.4, -0.39], 15); // Ajusta el zoom a 15
 
 // Añadir capa de mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -144,7 +144,7 @@ let userPosition;
 function updateUserPosition(position) {
     const { latitude, longitude } = position.coords;
     userMarker.setLatLng([latitude, longitude]);
-    map.setView([latitude, longitude], 13); // Centrar el mapa en la nueva posición
+    map.setView([latitude, longitude], 15); // Ajusta el zoom a 15 al centrar el mapa
     if (!userPosition) {
         userMarker.openPopup();
         userPosition = [latitude, longitude];

@@ -123,16 +123,22 @@ const restaurants = [
 ];
 
 // Inicializar el mapa
-const map = L.map('map').setView([39.4, -0.39], 15); // Ajusta el zoom a 15
+const map = L.map('map').setView([39.4, -0.39], 15);
 
 // Añadir capa de mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
 }).addTo(map);
 
-// Añadir marcadores de restaurantes
+// Crear iconos personalizados para los restaurantes
 restaurants.forEach(restaurant => {
-    const marker = L.marker([restaurant.latitude, restaurant.longitude]).addTo(map);
+    const icon = L.icon({
+        iconUrl: restaurant.imageUrl,
+        iconSize: [32, 32], // Tamaño del icono
+        iconAnchor: [16, 32], // Punto del icono que corresponde a la coordenada
+        popupAnchor: [0, -32] // Punto desde el cual se abre el popup en relación con el icono
+    });
+    const marker = L.marker([restaurant.latitude, restaurant.longitude], { icon: icon }).addTo(map);
     marker.bindPopup(`<b>${restaurant.name}</b><br><a href="${restaurant.url}">Ir a la página</a>`);
 });
 

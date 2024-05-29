@@ -122,20 +122,14 @@ const restaurants = [
     // Añade los demás restaurantes aquí con su respectiva imagen URL
 ];
 
-// Definir los límites del mapa basados en los puntos de los restaurantes
-const bounds = L.latLngBounds(restaurants.map(restaurant => [restaurant.latitude, restaurant.longitude]));
-const maxBounds = bounds.pad(0.1); // Añadir un padding del 10% alrededor de los puntos
-
-// Inicializar el mapa con límites de zoom
+// Inicializar el mapa
 const map = L.map('map', {
     zoomControl: true, 
-    dragging: true, 
+    dragging: false, 
     scrollWheelZoom: true, 
     doubleClickZoom: true, 
     boxZoom: true, 
-    touchZoom: true,
-    minZoom: map.getBoundsZoom(bounds) - 2, // Limitar el zoom mínimo para que los restaurantes sean visibles
-    maxZoom: 19
+    touchZoom: true
 }).setView([39.4, -0.39], 15);
 
 // Añadir capa de mapa
@@ -143,8 +137,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
 }).addTo(map);
 
-// Establecer límites máximos del mapa
-map.setMaxBounds(maxBounds);
+// Definir los límites del mapa basados en los puntos de los restaurantes
+const bounds = L.latLngBounds(restaurants.map(restaurant => [restaurant.latitude, restaurant.longitude]));
+map.setMaxBounds(bounds.pad(0.1)); // Añadir un padding del 10% alrededor de los puntos
 
 // Crear iconos personalizados para los restaurantes
 restaurants.forEach(restaurant => {
@@ -189,13 +184,3 @@ if (navigator.geolocation) {
 } else {
     alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
 }
-
-// Recargar la vista al finalizar el arrastre si el nivel de zoom es bajo
-map.on('dragend', function() {
-    if (map.getZoom() <= map.getBoundsZoom(bounds) - 2) {
-        if (userPosition) {
-            const currentZoom = map.getZoom();
-            map.setView(userPosition, currentZoom);
-        }
-    }
-});

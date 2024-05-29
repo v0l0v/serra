@@ -121,6 +121,23 @@ const restaurants = [
     },
     // Añade los demás restaurantes aquí con su respectiva imagen URL
 ];
+const restaurants = [
+    { 
+        name: "El Valle de Seta", 
+        latitude: 39.4020715, 
+        longitude: -0.3895136, 
+        url: "parada1.html", 
+        imageUrl: "parada1/parada1.png"
+    },
+    { 
+        name: "Castell de Cabres", 
+        latitude: 39.3994776, 
+        longitude: -0.3913431, 
+        url: "parada2.html", 
+        imageUrl: "parada2/parada2.png"
+    },
+    // Añade los demás restaurantes aquí con su respectiva imagen URL
+];
 
 // Inicializar el mapa
 const map = L.map('map', {
@@ -166,6 +183,8 @@ function updateUserPosition(position) {
     if (!userPosition) {
         userMarker.openPopup();
         userPosition = [latitude, longitude];
+    } else {
+        map.panTo([latitude, longitude], { animate: true }); // Centrar el mapa en la posición del usuario
     }
 }
 
@@ -185,10 +204,10 @@ if (navigator.geolocation) {
     alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
 }
 
-// Recargar la vista al finalizar el arrastre si el nivel de zoom es bajo
+// Recargar la vista al finalizar el arrastre
 map.on('dragend', function() {
     if (userPosition) {
         const currentZoom = map.getZoom();
-        map.setView(userPosition, currentZoom, { animate: true }); // Mantener el nivel de zoom actual y animar el movimiento
+        map.setView(userPosition, currentZoom, { animate: true }); // Centrar el mapa en la posición del usuario
     }
 });

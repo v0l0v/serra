@@ -57,7 +57,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Parada 8", 
+        name: "Caminos del agua", 
         latitude: 39.4012488, 
         longitude: -0.3944826, 
          url: "parada8.html", 

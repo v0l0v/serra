@@ -123,12 +123,23 @@ const restaurants = [
 ];
 
 // Inicializar el mapa
-const map = L.map('map').setView([39.4, -0.39], 15);
+const map = L.map('map', {
+    zoomControl: true, 
+    dragging: true, 
+    scrollWheelZoom: true, 
+    doubleClickZoom: true, 
+    boxZoom: true, 
+    touchZoom: true
+}).setView([39.4, -0.39], 15);
 
 // Añadir capa de mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
 }).addTo(map);
+
+// Definir los límites del mapa basados en los puntos de los restaurantes
+const bounds = L.latLngBounds(restaurants.map(restaurant => [restaurant.latitude, restaurant.longitude]));
+map.setMaxBounds(bounds.pad(0.1)); // Añadir un padding del 10% alrededor de los puntos
 
 // Crear iconos personalizados para los restaurantes
 restaurants.forEach(restaurant => {

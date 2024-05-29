@@ -156,18 +156,19 @@ restaurants.forEach(restaurant => {
 // Añadir marcador para la posición del usuario
 const userMarker = L.marker([0, 0]).addTo(map).bindPopup('Tu posición actual');
 let userPosition;
+let isUserInteracting = false;
 
 // Actualizar la posición del usuario
 function updateUserPosition(position) {
     const { latitude, longitude } = position.coords;
     userMarker.setLatLng([latitude, longitude]);
-    const currentZoom = map.getZoom(); // Obtener el nivel de zoom actual
-    map.setView([latitude, longitude], currentZoom); // Mantener el nivel de zoom actual
-    if (!userPosition) {
-        userMarker.openPopup();
-        userPosition = [latitude, longitude];
-    } else {
-        map.panTo([latitude, longitude], { animate: true }); // Centrar el mapa en la posición del usuario
+    if (!isUserInteracting) {
+        const currentZoom = map.getZoom(); // Obtener el nivel de zoom actual
+        map.setView([latitude, longitude], currentZoom); // Mantener el nivel de zoom actual
+        if (!userPosition) {
+            userMarker.openPopup();
+            userPosition = [latitude, longitude];
+        }
     }
 }
 
@@ -187,10 +188,10 @@ if (navigator.geolocation) {
     alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
 }
 
-// Recargar la vista al finalizar el arrastre
-map.on('dragend', function() {
-    if (userPosition) {
-        const currentZoom = map.getZoom();
-        map.setView(userPosition, currentZoom, { animate: false }); // Centrar el mapa en la posición del usuario
-    }
+// Detectar cuando el usuario está interactuando con el mapa
+map.on('movestart', function() {
+    isUserInteracting = true;
+});
+map.on('moveend', function() {
+    isUserInteracting = false;
 });

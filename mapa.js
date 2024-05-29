@@ -125,7 +125,7 @@ const restaurants = [
 // Inicializar el mapa
 const map = L.map('map', {
     zoomControl: true, 
-    dragging: true, 
+    dragging: false, 
     scrollWheelZoom: true, 
     doubleClickZoom: true, 
     boxZoom: true, 

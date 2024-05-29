@@ -161,7 +161,8 @@ let userPosition;
 function updateUserPosition(position) {
     const { latitude, longitude } = position.coords;
     userMarker.setLatLng([latitude, longitude]);
-    map.setView([latitude, longitude], 15); // Ajusta el zoom a 15 al centrar el mapa
+    const currentZoom = map.getZoom(); // Obtener el nivel de zoom actual
+    map.setView([latitude, longitude], currentZoom); // Mantener el nivel de zoom actual
     if (!userPosition) {
         userMarker.openPopup();
         userPosition = [latitude, longitude];

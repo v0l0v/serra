@@ -121,23 +121,6 @@ const restaurants = [
     },
     // Añade los demás restaurantes aquí con su respectiva imagen URL
 ];
-const restaurants = [
-    { 
-        name: "El Valle de Seta", 
-        latitude: 39.4020715, 
-        longitude: -0.3895136, 
-        url: "parada1.html", 
-        imageUrl: "parada1/parada1.png"
-    },
-    { 
-        name: "Castell de Cabres", 
-        latitude: 39.3994776, 
-        longitude: -0.3913431, 
-        url: "parada2.html", 
-        imageUrl: "parada2/parada2.png"
-    },
-    // Añade los demás restaurantes aquí con su respectiva imagen URL
-];
 
 // Inicializar el mapa
 const map = L.map('map', {

@@ -141,6 +141,7 @@ function findRestaurants(list) {
             },
             (error) => {
                 alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
+                displayRestaurants(list, null, null); // Mostrar sin ubicación
             },
             {
                 enableHighAccuracy: true,
@@ -150,6 +151,7 @@ function findRestaurants(list) {
         );
     } else {
         alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
+        displayRestaurants(list, null, null); // Mostrar sin ubicación
     }
 }
 
@@ -163,14 +165,22 @@ function displayRestaurants(list, userLat, userLng) {
 }
 
 function compareRestaurants(a, b, userLat, userLng) {
-    const distA = simplifiedDistance(userLat, userLng, a.latitude, a.longitude);
-    const distB = simplifiedDistance(userLat, userLng, b.latitude, b.longitude);
-    return distA !== distB ? distA - distB : b.rating - a.rating;
+    if (userLat !== null && userLng !== null) {
+        const distA = simplifiedDistance(userLat, userLng, a.latitude, a.longitude);
+        const distB = simplifiedDistance(userLat, userLng, b.latitude, b.longitude);
+        return distA !== distB ? distA - distB : b.rating - a.rating;
+    } else {
+        return b.rating - a.rating; // Comparar solo por rating si no hay coordenadas de usuario
+    }
 }
 
 function renderRestaurant(list, restaurant, userLat, userLng) {
-    const distKm = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
-    const distMeters = (distKm * 1000).toFixed(0);
+    let distMeters = 'N/A';
+    if (userLat !== null && userLng !== null) {
+        const distKm = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
+        distMeters = (distKm * 1000).toFixed(0);
+    }
+    
     const item = document.createElement('li');
     item.style = "display: flex; align-items: center; margin-bottom: 10px;";
 

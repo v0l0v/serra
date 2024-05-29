@@ -125,7 +125,7 @@ const restaurants = [
 // Inicializar el mapa
 const map = L.map('map', {
     zoomControl: true, 
-    dragging: false, 
+    dragging: true, 
     scrollWheelZoom: true, 
     doubleClickZoom: true, 
     boxZoom: true, 
@@ -184,3 +184,11 @@ if (navigator.geolocation) {
 } else {
     alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
 }
+
+// Recargar la vista al finalizar el arrastre si el nivel de zoom es bajo
+map.on('dragend', function() {
+    if (userPosition) {
+        const currentZoom = map.getZoom();
+        map.setView(userPosition, currentZoom, { animate: true }); // Mantener el nivel de zoom actual y animar el movimiento
+    }
+});

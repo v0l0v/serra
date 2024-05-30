@@ -124,7 +124,7 @@ const restaurants = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); toggleList(); checkProximity()
+    findRestaurants(); toggleList(); checkProximity();
 });
 
 //determinar la proximidad y cambiar el color de la bolita

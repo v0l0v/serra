@@ -131,23 +131,21 @@ document.addEventListener('DOMContentLoaded', function() {
     findRestaurants(); toggleList(); checkProximity();
 });
 
-// Función para verificar la proximidad y cambiar el color del botón
 function checkProximity() {
-    const button = document.getElementByIdocument.addEventListener('DOMContentLoaded', function() {
-        findRestaurants(); toggleList(); checkProximity();
+    const ball = document.getElementById('proximityBall');
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
-                const targetLat = 39.4032738; // Coordenadas de El Valle de Seta
-                const targetLng = -0.3991262;
-                const distance = haversineDistance(latitude, longitude, targetLat, targetLng); // Calcula la distancia en metros
+                const targetLat = 39.4020715; // Coordenadas de El Valle de Seta
+                const targetLng = -0.3895136;
+                const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
                 
-                if (distance <= 50) {
-                    button.style.backgroundColor = 'green';
+                if (distance <= 10) {
+                    ball.style.backgroundColor = 'green';
                     document.getElementById('hiddenText').style.display = 'block'; // Mostrar el texto oculto
                 } else {
-                    button.style.backgroundColor = 'red';
+                    ball.style.backgroundColor = 'red';
                     document.getElementById('hiddenText').style.display = 'none'; // Ocultar el texto
                 }
             },
@@ -165,21 +163,11 @@ function checkProximity() {
     }
 }
 
-// Función para calcular la distancia utilizando la fórmula de Haversine
-function haversineDistance(lat1, lon1, lat2, lon2) {
-    const R = 6371e3; // Radio de la Tierra en metros
-    const φ1 = lat1 * Math.PI / 180; // φ, λ en radianes
-    const φ2 = lat2 * Math.PI / 180;
-    const Δφ = (lat2 - lat1) * Math.PI / 180;
-    const Δλ = (lon2 - lon1) * Math.PI / 180;
-
-    const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-              Math.cos(φ1) * Math.cos(φ2) *
-              Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-    const distance = R * c; // En metros
-    return distance;
+// Simplified distance calculation
+function simplifiedDistance(lat1, lon1, lat2, lon2) {
+    const x = lat2 - lat1;
+    const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
+    return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
 }
 
 function findRestaurants() {

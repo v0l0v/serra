@@ -306,51 +306,5 @@ function redirectToBestRated() {
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
 
-//determinar la proximidad y cambiar el color de la bolita
-
-document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants();
-    toggleList();
-    checkProximity();
-});
-
-function checkProximity() {
-    const ball = document.getElementById('proximityBall');
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(
-            (position) => {
-                const { latitude, longitude } = position.coords;
-                const targetLat = 39.4020715; // Coordenadas de El Valle de Seta
-                const targetLng = -0.3895136;
-                const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
-                
-                if (distance <= 10) {
-                    ball.style.backgroundColor = 'green';
-                    document.getElementById('hiddenText').style.display = 'block'; // Mostrar el texto oculto
-                } else {
-                    ball.style.backgroundColor = 'red';
-                    document.getElementById('hiddenText').style.display = 'none'; // Ocultar el texto
-                }
-            },
-            (error) => {
-                alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
-            },
-            {
-                enableHighAccuracy: true,
-                maximumAge: 10000,
-                timeout: 5000
-            }
-        );
-    } else {
-        alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
-    }
-}
-
-// Simplified distance calculation
-function simplifiedDistance(lat1, lon1, lat2, lon2) {
-    const x = lat2 - lat1;
-    const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
-    return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
-}
 
 

@@ -128,7 +128,7 @@ const restaurants = [
 //determinar la proximidad y cambiar el color de la bolita
 
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); toggleList(); checkProximity()
+    findRestaurants(); toggleList(); checkProximity();
 });
 
 function checkProximity() {
@@ -168,7 +168,6 @@ function simplifiedDistance(lat1, lon1, lat2, lon2) {
     const x = lat2 - lat1;
     const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
     return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
-}
 }
 
 function findRestaurants() {

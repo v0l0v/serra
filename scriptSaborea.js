@@ -135,11 +135,11 @@ function checkProximity() {
         navigator.geolocation.watchPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
-                const targetLat = 39.4020715; // Coordenadas de El Valle de Seta
-                const targetLng = -0.3895136;
+                const targetLat = 39.397305; // Coordenadas de El Valle de Seta
+                const targetLng = -0.3997113;
                 const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
                 
-                if (distance <= 10) {
+                if (distance <= 20) {
                     button.style.backgroundColor = 'green';
                     document.getElementById('hiddenText').style.display = 'block'; // Mostrar el texto oculto
                 } else {

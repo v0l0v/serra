@@ -124,8 +124,10 @@ const restaurants = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); toggleList(); checkProximity()
+    findRestaurants(); toggleList(); checkProximity();
+
 });
+
 
 //determinar la proximidad y cambiar el color de la bolita
 
@@ -137,7 +139,7 @@ function checkProximity() {
                 const { latitude, longitude } = position.coords;
                 const targetLat = 39.4032738; // Coordenadas de El Valle de Seta
                 const targetLng = -0.3991262;
-                const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
+                const distance = haversineDistance(latitude, longitude, targetLat, targetLng); // Calcula la distancia en metros
                 
                 if (distance <= 50) {
                     button.style.backgroundColor = 'green';
@@ -161,10 +163,20 @@ function checkProximity() {
     }
 }
 
-function simplifiedDistance(lat1, lon1, lat2, lon2) {
-    const x = lat2 - lat1;
-    const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
-    return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
+function haversineDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371e3; // Radio de la Tierra en metros
+    const φ1 = lat1 * Math.PI / 180; // φ, λ en radianes
+    const φ2 = lat2 * Math.PI / 180;
+    const Δφ = (lat2 - lat1) * Math.PI / 180;
+    const Δλ = (lon2 - lon1) * Math.PI / 180;
+
+    const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+              Math.cos(φ1) * Math.cos(φ2) *
+              Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    const distance = R * c; // En metros
+    return distance;
 }
 
 function findRestaurants() {

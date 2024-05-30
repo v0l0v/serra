@@ -2,8 +2,8 @@
 const restaurants = [
     { 
         name: "El Valle de Seta", 
-        latitude: 39.397305, 
-        longitude: -0.3997113, 
+        latitude: 39.4032738, 
+        longitude: -0.3991262, 
         url: "parada1.html", 
         imageUrl: "parada1/parada1.png",
         rating: 1

@@ -139,7 +139,7 @@ function checkProximity() {
                 const targetLng = -0.3991262;
                 const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
                 
-                if (distance <= 20) {
+                if (distance <= 50) {
                     button.style.backgroundColor = 'green';
                     document.getElementById('hiddenText').style.display = 'block'; // Mostrar el texto oculto
                 } else {

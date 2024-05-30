@@ -123,13 +123,11 @@ const restaurants = [
     // Añade los demás restaurantes aquí con su respectiva imagen URL
 ];
 
-//determinar la proximidad y cambiar el color de la bolita
-
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants();
-    toggleList();
-    checkProximity();
+    findRestaurants(); toggleList(); checkProximity();
 });
+
+//determinar la proximidad y cambiar el color de la bolita
 
 function checkProximity() {
     const ball = document.getElementById('proximityBall');
@@ -162,11 +160,6 @@ function checkProximity() {
         alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
     }
 }
-
-
-
-
-
 
 function findRestaurants() {
     if (navigator.geolocation) {

@@ -161,7 +161,6 @@ function checkProximity() {
     }
 }
 
-// Simplified distance calculation
 function simplifiedDistance(lat1, lon1, lat2, lon2) {
     const x = lat2 - lat1;
     const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
@@ -190,6 +189,9 @@ function findRestaurants() {
 }
 
 function toggleList() {
+
+    const list = document.getElementById('restaurantsList');
+
     list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
 }
 

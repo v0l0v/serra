@@ -310,3 +310,12 @@ function redirectToBestRated() {
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
 
+function checkAnswer() {
+    var select = document.getElementById('questionSelect');
+    var value = select.value;
+    if (value === 'correct') {
+        document.getElementById('hiddenText').style.display = 'block';
+    } else {
+        alert('Respuesta incorrecta. Intenta de nuevo.');
+    }
+}

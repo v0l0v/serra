@@ -12,7 +12,7 @@
     <!-- Script para el control de audio -->
     <script src="audioControl.js"></script>
     
-    <title>Millena, en el Valle de Travadell</title>
+    <title>El Valle de Seta</title>
 </head>
 <body>
     <!-- Encabezado con logo -->
@@ -27,7 +27,6 @@
 
     <!-- Controles de audio -->
     <div class="audio-control-container">
-        </button>
         <button id="playPauseButton" class="audio-control" title="Pausar">
             <i class="fas fa-pause"></i>
         </button>
@@ -52,7 +51,6 @@
         <img src="parada1/imagen1a.jpg" alt="Parada1" class="responsive-image">
     </div>
     
-
     <!-- Texto -->
     <div>
         <h4>
@@ -69,6 +67,20 @@
             <br>
         </h4>
     </div>
+
+    <!-- Pregunta con opciones desplegables -->
+    <div>
+        <h3>Pregunta:</h3>
+        <label for="questionSelect">¿Cuál es la altitud de la Loma Alta?</label>
+        <select id="questionSelect">
+            <option value="">Selecciona una opción</option>
+            <option value="incorrect">982 metros</option>
+            <option value="incorrect">635 metros</option>
+            <option value="correct">1.017 metros</option>
+        </select>
+        <button onclick="checkAnswer()">Enviar</button>
+    </div>
+
     <script src="scriptSaborea.js"></script>
 </body>
 </html>

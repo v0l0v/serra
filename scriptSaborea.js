@@ -2,8 +2,8 @@
 const restaurants = [
     { 
         name: "El Valle de Seta", 
-        latitude: 39.397305, 
-        longitude: -0.3997113, 
+        latitude: 39.4032738, 
+        longitude: -0.3991262, 
         url: "parada1.html", 
         imageUrl: "parada1/parada1.png",
         rating: 1
@@ -135,8 +135,8 @@ function checkProximity() {
         navigator.geolocation.watchPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
-                const targetLat = 39.397305; // Coordenadas de El Valle de Seta
-                const targetLng = -0.3997113;
+                const targetLat = 39.4032738; // Coordenadas de El Valle de Seta
+                const targetLng = -0.3991262;
                 const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
                 
                 if (distance <= 20) {

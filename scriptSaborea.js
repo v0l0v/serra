@@ -2,7 +2,7 @@
 const restaurants = [
     { 
         name: "El Valle de Seta", 
-        latitude: 39.4020715, 
+        latitude: 39.3972326, 
         longitude: -0.3895136, 
         url: "parada1.html", 
         imageUrl: "parada1/parada1.png",
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //determinar la proximidad y cambiar el color de la bolita
 
 function checkProximity() {
-    const ball = document.getElementById('proximityBall');
+    const button = document.getElementById('proximityButton');
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(
             (position) => {
@@ -140,10 +140,10 @@ function checkProximity() {
                 const distance = simplifiedDistance(latitude, longitude, targetLat, targetLng) * 1000; // Convert to meters
                 
                 if (distance <= 10) {
-                    ball.style.backgroundColor = 'green';
+                    button.style.backgroundColor = 'green';
                     document.getElementById('hiddenText').style.display = 'block'; // Mostrar el texto oculto
                 } else {
-                    ball.style.backgroundColor = 'red';
+                    button.style.backgroundColor = 'red';
                     document.getElementById('hiddenText').style.display = 'none'; // Ocultar el texto
                 }
             },
@@ -159,6 +159,13 @@ function checkProximity() {
     } else {
         alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
     }
+}
+
+// Simplified distance calculation
+function simplifiedDistance(lat1, lon1, lat2, lon2) {
+    const x = lat2 - lat1;
+    const y = (lon2 - lon1) * Math.cos(Math.PI / 180 * lat1);
+    return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
 }
 
 function findRestaurants() {

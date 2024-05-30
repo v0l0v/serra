@@ -195,8 +195,7 @@ function toggleList() {
     list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
 }
 
-// Cache DOM element to avoid repeated lookups
-const list = document.getElementById('restaurantsList');
+
 list.innerHTML = ''; // Limpiar lista existente
 
 restaurants.forEach(restaurant => {

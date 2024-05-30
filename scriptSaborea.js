@@ -123,9 +123,7 @@ const restaurants = [
     // Añade los demás restaurantes aquí con su respectiva imagen URL
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); toggleList(); checkProximity();
-});
+
 
 //determinar la proximidad y cambiar el color de la bolita
 
@@ -135,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Función para verificar la proximidad y cambiar el color del botón
 function checkProximity() {
-    const button = document.getElementById('proximityButton');
+    const button = document.getElementByIdocument.addEventListener('DOMContentLoaded', function() {
+        findRestaurants(); toggleList(); checkProximity();
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(
             (position) => {
@@ -205,7 +204,6 @@ function findRestaurants() {
 }
 
 function toggleList() {
-    const list = document.getElementById('restaurantsList');
     list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
 }
 

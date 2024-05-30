@@ -124,7 +124,7 @@ const restaurants = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); toggleList(); checkProximity();
+    findRestaurants(); toggleList(); checkProximity()
 });
 
 //determinar la proximidad y cambiar el color de la bolita
@@ -190,11 +190,10 @@ function findRestaurants() {
 
 function toggleList() {
 
-    const list = document.getElementById('restaurantsList');
-
     list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
 }
 
+const list = document.getElementById('restaurantsList');
 
 list.innerHTML = ''; // Limpiar lista existente
 

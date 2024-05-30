@@ -125,12 +125,15 @@ const restaurants = [
 
 document.addEventListener('DOMContentLoaded', function() {
     findRestaurants(); toggleList(); checkProximity();
-
 });
-
 
 //determinar la proximidad y cambiar el color de la bolita
 
+document.addEventListener('DOMContentLoaded', function() {
+    findRestaurants(); toggleList(); checkProximity();
+});
+
+// Función para verificar la proximidad y cambiar el color del botón
 function checkProximity() {
     const button = document.getElementById('proximityButton');
     if (navigator.geolocation) {
@@ -163,6 +166,7 @@ function checkProximity() {
     }
 }
 
+// Función para calcular la distancia utilizando la fórmula de Haversine
 function haversineDistance(lat1, lon1, lat2, lon2) {
     const R = 6371e3; // Radio de la Tierra en metros
     const φ1 = lat1 * Math.PI / 180; // φ, λ en radianes
@@ -190,9 +194,9 @@ function findRestaurants() {
                 alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
             },
             {
-                enableHighAccuracy: true, // Para mayor precisión
-                maximumAge: 10000, // Acepta posiciones cacheadas de hasta 10 segundos de antigüedad
-                timeout: 5000 // Tiempo máximo en milisegundos que se espera para obtener una posición
+                enableHighAccuracy: true,
+                maximumAge: 10000,
+                timeout: 5000
             }
         );
     } else {
@@ -201,7 +205,7 @@ function findRestaurants() {
 }
 
 function toggleList() {
-
+    const list = document.getElementById('restaurantsList');
     list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
 }
 

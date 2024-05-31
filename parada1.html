@@ -63,21 +63,20 @@
     </div>
 
 <!-- Pregunta con opciones desplegables -->
-    <div id="questionBlock" class="center">
-        <h3>¿Quieres conseguir un objeto secreto?</h3>
-        <label for="questionSelect">¿Cuál es la altitud de la Loma Alta?</label>
-        <select id="questionSelect">
-            <option value="">Selecciona una opción</option>
-            <option value="incorrect">982 metros</option>
-            <option value="incorrect">635 metros</option>
-            <option value="correct">1.017 metros</option>
-        </select>
-        <button onclick="checkAnswer()">Enviar</button>
-    </div>
+<div id="questionBlock" class="center">
+    <h3>¿Quieres conseguir un objeto secreto?</h3>
+    <label for="questionSelect">¿Cuál es la altitud de la Loma Alta?</label>
+    <select id="questionSelect" onchange="checkAnswer()">
+        <option value="">Selecciona una opción</option>
+        <option value="incorrect">982 metros</option>
+        <option value="incorrect">635 metros</option>
+        <option value="correct">1.017 metros</option>
+    </select>
+</div>
 
     <!-- añadiendo contenido oculto-->
     <div id="hiddenText" style="display: none;">
-        <h4>La respuesta es correcta !!!.</h4>
+        <h4>La respuesta es correcta !!!</h4>
     </div>
 
     <script src="scriptSaborea.js"></script>

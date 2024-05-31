@@ -39,12 +39,6 @@
     <audio id="audio" src="parada1/parada1.mp3" autoplay loop>
         Tu navegador no soporta la etiqueta de audio.
     </audio>
-    
-    <!-- añadiendo contenido oculto-->
-    <div id="hiddenText" style="display: none;">
-        <!-- Contenido oculto -->
-        <h4>Texto que solo puedes ver aqui.</h4>
-    </div>
 
     <!-- Imagen añadida -->
     <div class="image-container">
@@ -69,7 +63,7 @@
     </div>
 
     <!-- Pregunta con opciones desplegables -->
-    <div>
+    <div id="questionBlock" class="center">
         <h3>Pregunta:</h3>
         <label for="questionSelect">¿Cuál es la altitud de la Loma Alta?</label>
         <select id="questionSelect">
@@ -81,6 +75,11 @@
         <button onclick="checkAnswer()">Enviar</button>
     </div>
 
+    <!-- añadiendo contenido oculto-->
+    <div id="hiddenText" style="display: none;">
+        <h4>La respuesta es correcta !!!.</h4>
+    </div>
+    
     <script src="scriptSaborea.js"></script>
 </body>
 </html>

@@ -310,12 +310,16 @@ function redirectToBestRated() {
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
 
+// Función para mostrar el contenido oculto si la respuesta es correcta
 function checkAnswer() {
     var select = document.getElementById('questionSelect');
     var value = select.value;
     if (value === 'correct') {
         document.getElementById('hiddenText').style.display = 'block';
+        document.getElementById('questionBlock').style.display = 'none';
     } else {
         alert('Respuesta incorrecta. Intenta de nuevo.');
     }
 }
+
+// Aquí puedes agregar otras funciones y scripts que ya tienes en este archivo

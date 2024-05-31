@@ -265,8 +265,8 @@ function renderRestaurant(restaurant, userLat, userLng) {
     const distance = document.createElement('span');
     distance.textContent = `${distMeters} m`;
 
-    link.appendChild(image); // Primero la imagen
     link.appendChild(name); // Segundo el nombre
+    link.appendChild(image); // Primero la imagen
     link.appendChild(distance); // Tercero la distancia
 
     item.appendChild(link);

@@ -63,7 +63,7 @@ header {
 #restaurantsList {
     list-style-type: none;
     padding: 0;
-    width: 60%; /* Aumenta el ancho de la lista */
+    width: 75%; /* Aumenta el ancho de la lista */
     margin: 0 auto; /* Centra la lista */
 }
 

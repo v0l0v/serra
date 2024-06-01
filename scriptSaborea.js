@@ -237,10 +237,16 @@ document.addEventListener('DOMContentLoaded', function() {
 function checkAnswer() {
     const select = document.getElementById('questionSelect');
     const hiddenText = document.getElementById('hiddenText');
+    const incorrectText = document.getElementById('incorrectText');
 
     if (select.value === 'correct') {
         hiddenText.style.display = 'block';
+        incorrectText.style.display = 'none';
+    } else if (select.value === 'incorrect') {
+        hiddenText.style.display = 'none';
+        incorrectText.style.display = 'block';
     } else {
         hiddenText.style.display = 'none';
+        incorrectText.style.display = 'none';
     }
 }

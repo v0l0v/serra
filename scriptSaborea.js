@@ -246,28 +246,34 @@ function renderRestaurant(restaurant, userLat, userLng) {
     const distKm = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
     const distMeters = (distKm * 1000).toFixed(0);
     const item = document.createElement('li');
-    item.style = "display: flex; align-items: center; margin-bottom: 10px;"; // Estilos para alinear los elementos en una fila
+    item.style = "display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;"; // Estilos para alinear los elementos en una fila
 
     const link = document.createElement('a');
     link.href = restaurant.url;
-    
-    link.style = "display: flex; align-items: center; text-decoration: none; color: inherit;"; // Estilos para el enlace
+    link.style = "display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;"; // Estilos para el enlace
 
     const image = document.createElement('img');
     image.src = restaurant.imageUrl; // Usa la URL de la imagen específica para cada restaurante
     image.alt = `Imagen de ${restaurant.name}`;
-    image.style = "width: 50px; height: 50px; margin-right: 10px;"; // Estilos para la imagen
+    image.style = "width: 50px; height: 50px; margin: 0 10px;"; // Estilos para la imagen centrada
+
+    const nameContainer = document.createElement('div');
+    nameContainer.style = "flex: 1; text-align: left;"; // Contenedor para el nombre alineado a la izquierda
 
     const name = document.createElement('span');
     name.textContent = restaurant.name;
-    name.style = "flex-grow: 1; margin-right: 10px;"; // Flex-grow para que el nombre ocupe el espacio disponible
+    nameContainer.appendChild(name);
+
+    const distanceContainer = document.createElement('div');
+    distanceContainer.style = "flex: 1; text-align: right;"; // Contenedor para la distancia alineada a la derecha
 
     const distance = document.createElement('span');
     distance.textContent = `${distMeters} m`;
+    distanceContainer.appendChild(distance);
 
-    link.appendChild(name); // Segundo el nombre
-    link.appendChild(image); // Primero la imagen
-    link.appendChild(distance); // Tercero la distancia
+    link.appendChild(nameContainer); // Primero el nombre alineado a la izquierda
+    link.appendChild(image); // Luego la imagen centrada
+    link.appendChild(distanceContainer); // Finalmente la distancia alineada a la derecha
 
     item.appendChild(link);
     list.appendChild(item);

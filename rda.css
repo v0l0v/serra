@@ -61,20 +61,39 @@ header {
 }
 
 #restaurantsList {
-    display: none;
     list-style-type: none;
-    padding: 0px;
-    width: 100%;
-    max-width: 600px;
-    background-color: transparent;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0;
 }
 
 #restaurantsList li {
-    background-color: rgba(250, 250, 250, 0.658);
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
+}
+
+#restaurantsList a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+#restaurantsList img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+#restaurantsList .name-container {
+    flex: 1;
+    text-align: left;
+}
+
+#restaurantsList .distance-container {
+    flex: 1;
+    text-align: right;
 }
 
 button {

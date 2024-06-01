@@ -81,10 +81,11 @@
         </h4>
     </div>
 
-    <!-- Pregunta con opciones desplegables -->
+<!-- Pregunta con opciones desplegables -->
+<div class="question-box">
     <div id="questionBlock" class="center">
         <h4>¿Quieres conseguir un objeto secreto?</h4>
-        <p class="center-text">Si aciertas la pregunta, te entregaremos un objeto muy importante, lo encontraras en la lista de objetos conseguidos, el icono de la estrella.<br>Pulsa sobre el para ver todos los objetos que tienes.Cuando tengas 9 objetos podras optar a resolver el misterio.</p>
+        <p class="center-text">Si aciertas la pregunta, te entregaremos un objeto muy importante, lo encontrarás en la lista de objetos conseguidos, el icono de la estrella.<br>Pulsa sobre él para ver todos los objetos que tienes. Cuando tengas 9 objetos, podrás optar a resolver el misterio.</p>
         <select id="questionSelect" onchange="checkAnswer()">
             <option value="">Selecciona una opción</option>
             <option value="incorrect">982 metros</option>
@@ -93,18 +94,19 @@
         </select>
     </div>
 
-    <!-- añadiendo contenido oculto-->
+    <!-- Añadiendo contenido oculto -->
     <div id="hiddenText" style="display: none;">
         <h4>La respuesta es correcta !!!</h4>
         <br>
         <br>
     </div>
-        <!-- respuesta incorrecta-->
+    <!-- Respuesta incorrecta -->
     <div id="incorrectText" style="display: none;">
-        <h4>La respuesta es incorrecta, intentalo de nuevo ! </h4>
+        <h4>La respuesta es incorrecta, inténtalo de nuevo ! </h4>
         <br>
         <br>
     </div>
+</div>
 
     <script src="scriptSaborea.js"></script>
 </body>

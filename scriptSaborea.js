@@ -123,12 +123,10 @@ const restaurants = [
     // Añade los demás restaurantes aquí con su respectiva imagen URL
 ];
 
-
-
-//determinar la proximidad y cambiar el color de la bolita
-
 document.addEventListener('DOMContentLoaded', function() {
-    findRestaurants(); toggleList(); checkProximity();
+    console.log('Documento cargado y listo');
+    findRestaurants();
+    checkProximity();
 });
 
 function findRestaurants() {
@@ -136,6 +134,7 @@ function findRestaurants() {
         navigator.geolocation.watchPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
+                console.log('Ubicación obtenida:', latitude, longitude);
                 displayRestaurants(latitude, longitude);
             },
             (error) => {
@@ -152,85 +151,12 @@ function findRestaurants() {
     }
 }
 
-function toggleList() {
-    list.style.display = window.getComputedStyle(list).display === 'none' ? 'block' : 'none';
-}
-
-const list = document.getElementById('restaurantsList');
-
-list.innerHTML = ''; // Limpiar lista existente
-
-restaurants.forEach(restaurant => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `
-        <div class="restaurant-entry">
-            <img src="${restaurant.logo}" alt="Logo de ${restaurant.name}" class="logo">
-            <div class="info">
-                <span class="name">${restaurant.name}</span>
-                <span class="distance">${restaurant.distance}</span>
-            </div>
-        </div>
-    `;
-    list.appendChild(listItem);
-});
-
-// Conexión WebSocket
-const socket = new WebSocket('wss://gila.ovh/rda');
-
-socket.onopen = function(event) {
-    console.log('Conexión WebSocket establecida');
-};
-
-socket.onmessage = function(event) {
-    try {
-        const data = JSON.parse(event.data);
-        // Asegúrate de que los datos incluyan latitud y longitud válidas
-        if (data.latitude && data.longitude) {
-            displayRestaurants(data.latitude, data.longitude);
-        } else {
-            console.error('Formato de datos incorrecto:', data);
-        }
-    } catch (error) {
-        console.error('Error procesando los datos:', error);
-    }
-};
-
-socket.onerror = function(error) {
-    console.error('WebSocket error:', error);
-};
-
-//  reconexión automática en caso de que la conexión WebSocket se pierda
-socket.onclose = function() {
-    console.log('WebSocket cerrado. Reintentando conexión...');
-    setTimeout(function() {
-        connectWebSocket();
-    }, 5000); // Reintentar conexión cada 5 segundos
-};
-
-function connectWebSocket() {
-    // Intenta reconectar
-    socket = new WebSocket('ws://gila.ovh/rda');
-}
-
-// Agrega validación para asegurarte de que los datos recibidos a través de WebSocket sean válidos.
-socket.onmessage = function(event) {
-    try {
-        const data = JSON.parse(event.data);
-        if(data.latitude && data.longitude) {
-            displayRestaurants(data.latitude, data.longitude);
-        } else {
-            console.error('Formato de datos incorrecto:', data);
-        }
-    } catch (error) {
-        console.error('Error procesando los datos:', error);
-    }
-};
-
-
 function displayRestaurants(userLat, userLng) {
-    restaurants.sort((a, b) => compareRestaurants(a, b, userLat, userLng));
-
+    const list = document.getElementById('restaurantsList');
     list.innerHTML = ''; // Limpiar entradas anteriores
+
+    restaurants.sort((a, b) => compareRestaurants(a, b, userLat, userLng));
+    
     restaurants.forEach(restaurant => {
         renderRestaurant(restaurant, userLat, userLng);
     });
@@ -245,6 +171,8 @@ function compareRestaurants(a, b, userLat, userLng) {
 function renderRestaurant(restaurant, userLat, userLng) {
     const distKm = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
     const distMeters = (distKm * 1000).toFixed(0);
+    const list = document.getElementById('restaurantsList');
+
     const item = document.createElement('li');
     item.style = "display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;"; // Estilos para alinear los elementos en una fila
 
@@ -286,28 +214,8 @@ function simplifiedDistance(lat1, lon1, lat2, lon2) {
     return Math.sqrt(x * x + y * y) * 111.32; // Approximation for kilometers
 }
 
-function handleGeoLocation(callback) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callback, () => {
-            alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
-        });
-    } else {
-        alert("Geolocalización no soportada en tu navegador. Intenta con otro dispositivo o navegador.");
-    }
-}
-
-function redirectToNearest() {
-    handleGeoLocation((position) => {
-        const { latitude, longitude } = position.coords;
-        window.location.href = getNearestRestaurant(latitude, longitude).url;
-    });
-}
-
-function getNearestRestaurant(userLat, userLng) {
-    return restaurants.reduce((nearest, restaurant) => {
-        const dist = simplifiedDistance(userLat, userLng, restaurant.latitude, restaurant.longitude);
-        return (dist < nearest.dist) ? { dist, restaurant } : nearest;
-    }, { dist: Infinity }).restaurant;
+function checkProximity() {
+    // Implementación de la función para verificar proximidad
 }
 
 function redirectToBestRated() {
@@ -315,17 +223,3 @@ function redirectToBestRated() {
     const bestRatedRestaurants = restaurants.filter(r => r.rating === maxRating);
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
-
-// Función para mostrar el contenido oculto si la respuesta es correcta
-function checkAnswer() {
-    var select = document.getElementById('questionSelect');
-    var value = select.value;
-    if (value === 'correct') {
-        document.getElementById('hiddenText').style.display = 'block';
-        document.getElementById('questionBlock').style.display = 'none';
-    } else {
-        alert('Respuesta incorrecta. Intenta de nuevo.');
-    }
-}
-
-// Aquí puedes agregar otras funciones y scripts que ya tienes en este archivo

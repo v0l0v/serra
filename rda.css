@@ -63,6 +63,8 @@ header {
 #restaurantsList {
     list-style-type: none;
     padding: 0;
+    width: 80%; /* Aumenta el ancho de la lista */
+    margin: 0 auto; /* Centra la lista */
 }
 
 #restaurantsList li {
@@ -70,6 +72,8 @@ header {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    width: 100%; /* Asegura que cada elemento ocupe el 100% del ancho de la lista */
+
 }
 
 #restaurantsList a {
@@ -88,7 +92,7 @@ header {
 
 #restaurantsList .name-container {
     flex: 1;
-    text-align: center;
+    text-align: left;
 }
 
 #restaurantsList .distance-container {

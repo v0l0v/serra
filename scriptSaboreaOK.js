@@ -174,6 +174,7 @@ function renderRestaurant(restaurant, userLat, userLng) {
     const list = document.getElementById('restaurantsList');
 
     const item = document.createElement('li');
+    item.style = "display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; width: 100%;"; // Asegura que el contenido esté distribuido equitativamente
 
     const link = document.createElement('a');
     link.href = restaurant.url;

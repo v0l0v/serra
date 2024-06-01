@@ -193,14 +193,14 @@ function renderRestaurant(restaurant, userLat, userLng) {
     nameContainer.appendChild(name);
 
     const distanceContainer = document.createElement('div');
-    distanceContainer.style = "flex: 1; text-align: right;"; // Contenedor para la distancia alineada a la derecha
+    distanceContainer.style = "flex: 1; text-align: left;"; // Contenedor para la distancia alineada a la derecha
 
     const distance = document.createElement('span');
     distance.textContent = `${distMeters} m`;
     distanceContainer.appendChild(distance);
 
-    link.appendChild(nameContainer); // Primero el nombre alineado a la izquierda
     link.appendChild(image); // Luego la imagen centrada
+    link.appendChild(nameContainer); // Primero el nombre alineado a la izquierda
     link.appendChild(distanceContainer); // Finalmente la distancia alineada a la derecha
 
     item.appendChild(link);

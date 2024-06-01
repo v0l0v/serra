@@ -54,6 +54,10 @@ header {
     margin-top: 10px;
 }
 
+.center-text {
+    text-align: center;
+}
+
 #logo-saborea, #logo-rda {
     height: 175px;
     margin-top: 20px;

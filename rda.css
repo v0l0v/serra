@@ -63,14 +63,14 @@ header {
 #restaurantsList {
     list-style-type: none;
     padding: 0;
-    width: 75%; /* Aumenta el ancho de la lista */
+    width: 80%; /* Aumenta el ancho de la lista */
     margin: 0 auto; /* Centra la lista */
 }
 
 #restaurantsList li {
     display: flex;
     align-items: center;
-    justify-content: center; /* Asegura que el contenido esté centrado */
+    justify-content: space-between; /* Distribuye el espacio equitativamente */
     margin-bottom: 10px;
     width: 100%;
 }
@@ -81,7 +81,6 @@ header {
     text-decoration: none;
     color: inherit;
     width: 100%;
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
 }
 
 #restaurantsList img {
@@ -90,16 +89,20 @@ header {
     margin: 0 10px;
 }
 
+#restaurantsList .image-container {
+    flex: 1; /* Asegura que el contenedor de la imagen ocupe una parte equitativa */
+    text-align: center;
+}
+
 #restaurantsList .name-container {
-    flex: 1;
-    text-align: center; /* Centra el texto del nombre */
+    flex: 1; /* Asegura que el contenedor del nombre ocupe una parte equitativa */
+    text-align: center;
 }
 
 #restaurantsList .distance-container {
-    flex: 1;
-    text-align: center; /* Centra el texto de la distancia */
+    flex: 1; /* Asegura que el contenedor de la distancia ocupe una parte equitativa */
+    text-align: center;
 }
-
 
 button {
     background-color: rgb(99, 1, 26);

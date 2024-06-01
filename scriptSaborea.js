@@ -174,32 +174,33 @@ function renderRestaurant(restaurant, userLat, userLng) {
     const list = document.getElementById('restaurantsList');
 
     const item = document.createElement('li');
-    item.style = "display: flex; align-items: center; justify-content: center; margin-bottom: 10px; width: 100%;"; // Asegura que el contenido esté centrado
+    item.style = "display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; width: 100%;"; // Asegura que el contenido esté distribuido equitativamente
 
     const link = document.createElement('a');
     link.href = restaurant.url;
-    link.style = "display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%; justify-content: space-between;"; // Distribuye el espacio entre los elementos
+    link.style = "display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;"; // Distribuye el espacio entre los elementos
 
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'image-container';
     const image = document.createElement('img');
     image.src = restaurant.imageUrl; // Usa la URL de la imagen específica para cada restaurante
     image.alt = `Imagen de ${restaurant.name}`;
-    image.style = "width: 50px; height: 50px; margin: 0 10px;"; // Estilos para la imagen centrada
+    image.style = "width: 50px; height: 50px; margin: 0 auto;"; // Centra la imagen dentro de su contenedor
+    imageContainer.appendChild(image);
 
     const nameContainer = document.createElement('div');
-    nameContainer.style = "flex: 1; text-align: center;"; // Contenedor para el nombre centrado
-
+    nameContainer.className = 'name-container'; // Contenedor para el nombre centrado
     const name = document.createElement('span');
     name.textContent = restaurant.name;
     nameContainer.appendChild(name);
 
     const distanceContainer = document.createElement('div');
-    distanceContainer.style = "flex: 1; text-align: center;"; // Contenedor para la distancia centrada
-
+    distanceContainer.className = 'distance-container'; // Contenedor para la distancia centrada
     const distance = document.createElement('span');
     distance.textContent = `${distMeters} m`;
     distanceContainer.appendChild(distance);
 
-    link.appendChild(image); // Luego la imagen centrada
+    link.appendChild(imageContainer); // Primero la imagen centrada
     link.appendChild(nameContainer); // Luego el nombre centrado
     link.appendChild(distanceContainer); // Finalmente la distancia centrada
 

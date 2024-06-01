@@ -88,7 +88,7 @@ header {
 
 #restaurantsList .name-container {
     flex: 1;
-    text-align: left;
+    text-align: center;
 }
 
 #restaurantsList .distance-container {

@@ -93,7 +93,7 @@ header {
 
 #restaurantsList .distance-container {
     flex: 1;
-    text-align: right;
+    text-align: left;
 }
 
 button {

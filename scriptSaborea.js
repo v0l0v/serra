@@ -223,3 +223,24 @@ function redirectToBestRated() {
     const bestRatedRestaurants = restaurants.filter(r => r.rating === maxRating);
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Resto del código existente
+    console.log('Documento cargado y listo');
+    findRestaurants();
+    checkProximity();
+    
+    // Añadimos la llamada a checkAnswer cuando la página carga
+    document.getElementById('questionSelect').addEventListener('change', checkAnswer);
+});
+
+function checkAnswer() {
+    const select = document.getElementById('questionSelect');
+    const hiddenText = document.getElementById('hiddenText');
+
+    if (select.value === 'correct') {
+        hiddenText.style.display = 'block';
+    } else {
+        hiddenText.style.display = 'none';
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución del Misterio</title>
+    <style>
+        .object-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .object-item {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            cursor: move;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Objetos Conseguido</h1>
+    <div id="objectList" class="object-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const objectList = document.getElementById('objectList');
+            let correctAnswers = JSON.parse(localStorage.getItem('correctAnswers')) || [];
+            
+            correctAnswers.forEach((answer, index) => {
+                const item = document.createElement('div');
+                item.className = 'object-item';
+                item.id = answer.id;
+                item.draggable = true;
+                item.innerHTML = `<p>${answer.text}</p>`;
+                
+                const buttonContainer = document.createElement('div');
+                buttonContainer.className = 'button-container';
+
+                const upButton = document.createElement('button');
+                upButton.textContent = '⬆️';
+                upButton.onclick = () => moveUp(index);
+                buttonContainer.appendChild(upButton);
+
+                const downButton = document.createElement('button');
+                downButton.textContent = '⬇️';
+                downButton.onclick = () => moveDown(index);
+                buttonContainer.appendChild(downButton);
+
+                item.appendChild(buttonContainer);
+                objectList.appendChild(item);
+            });
+
+            function moveUp(index) {
+                if (index > 0) {
+                    [correctAnswers[index], correctAnswers[index - 1]] = [correctAnswers[index - 1], correctAnswers[index]];
+                    localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
+                    window.location.reload();
+                }
+            }
+
+            function moveDown(index) {
+                if (index < correctAnswers.length - 1) {
+                    [correctAnswers[index], correctAnswers[index + 1]] = [correctAnswers[index + 1], correctAnswers[index]];
+                    localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
+                    window.location.reload();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

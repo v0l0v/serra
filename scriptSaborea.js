@@ -242,6 +242,15 @@ function checkAnswer() {
     if (select.value === 'correct') {
         hiddenText.style.display = 'block';
         incorrectText.style.display = 'none';
+
+        // Guardar la respuesta correcta en localStorage
+        let correctAnswers = JSON.parse(localStorage.getItem('correctAnswers')) || [];
+        const answer = {
+            text: hiddenText.innerText,
+            id: `answer-${correctAnswers.length + 1}`
+        };
+        correctAnswers.push(answer);
+        localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
     } else if (select.value === 'incorrect') {
         hiddenText.style.display = 'none';
         incorrectText.style.display = 'block';

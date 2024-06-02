@@ -61,16 +61,19 @@ header {
 }
 
 #logo-saborea, #logo-rda {
-    height: 175px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    height: 75px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 #restaurantsList {
     list-style-type: none;
     padding: 0;
-    width: 80%; /* Aumenta el ancho de la lista */
-    margin: 0 auto; /* Centra la lista */
+    width: 80%;
+    margin: 0 auto;
 }
 
 #restaurantsList li {
@@ -79,10 +82,10 @@ header {
     justify-content: space-between;
     margin-bottom: 10px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.4); /* Fondo blanco semitransparente */
+    background: rgba(255, 255, 255, 0.4);
     padding: 10px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #restaurantsList a {
@@ -100,17 +103,17 @@ header {
 }
 
 #restaurantsList .image-container {
-    flex: 1; /* Asegura que el contenedor de la imagen ocupe una parte equitativa */
+    flex: 1;
     text-align: center;
 }
 
 #restaurantsList .name-container {
-    flex: 1; /* Asegura que el contenedor del nombre ocupe una parte equitativa */
+    flex: 1;
     text-align: center;
 }
 
 #restaurantsList .distance-container {
-    flex: 1; /* Asegura que el contenedor de la distancia ocupe una parte equitativa */
+    flex: 1;
     text-align: center;
 }
 
@@ -227,28 +230,29 @@ textarea:focus {
 }
 
 .image-container {
+    position: relative;
     text-align: center;
-    margin: 0; /* Eliminar márgenes */
-    padding: 0; /* Eliminar padding */
+    margin: 0;
+    padding: 0;
     width: 100%;
 }
 
 .responsive-image {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    width: 100%;
     height: auto;
-    border-radius: 0; /* Eliminar bordes redondeados */
-    box-shadow: none; /* Eliminar sombra */
-    margin: 0; /* Eliminar márgenes */
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
 }
 
 .question-box {
     border: 2px solid rgb(99, 1, 26);
     padding: 15px;
-    margin: 20px auto; /* Margen superior e inferior, centrado */
+    margin: 20px auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    width: 80%; /* Ancho del 80% */
+    width: 80%;
 }
 
 .center-text {

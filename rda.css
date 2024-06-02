@@ -132,6 +132,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 100px; /* Ajusta este valor según sea necesario */
+
 }
 
 .button-container i {

@@ -238,8 +238,8 @@ textarea:focus {
 
 .question-box {
     border: 2px solid rgb(99, 1, 26);
-    padding: 15px;
-    margin: 10px auto 40px auto; /* Margen superior e inferior, centrado */
+    padding: 55px;
+    margin: 50px auto 40px auto; /* Margen superior e inferior, centrado */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;

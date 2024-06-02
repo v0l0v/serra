@@ -228,24 +228,17 @@ textarea:focus {
 
 .image-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+    width: 100%;
 }
 
 .responsive-image {
-    max-width: 80%;
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.image-container.full-width {
-    width: 100%;
-    margin: 0;
-}
-
-.responsive-image.full-width {
-    width: 100%;
-    height: auto;
+    border-radius: 0; /* Eliminar bordes redondeados */
+    box-shadow: none; /* Eliminar sombra */
+    margin: 0; /* Eliminar márgenes */
 }
 
 .question-box {
@@ -256,8 +249,8 @@ textarea:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     width: 80%; /* Ancho del 80% */
-
 }
+
 .center-text {
     text-align: center;
 }

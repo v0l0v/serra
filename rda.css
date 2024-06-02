@@ -69,6 +69,15 @@ header {
     z-index: 10;
 }
 
+#logo-saborea2, #logo-rda2 {
+    height: 750px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
 #restaurantsList {
     list-style-type: none;
     padding: 0;

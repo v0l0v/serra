@@ -4,11 +4,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: calc(100vh - 100px);
+    min-height: 100vh;
     background: url('fondorda.webp') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     color: rgb(0, 0, 0);
+    margin: 0;
+    padding-bottom: 40px;
 }
 
 p {
@@ -54,6 +56,10 @@ header {
     margin-top: 10px;
 }
 
+.center-text {
+    text-align: center;
+}
+
 #logo-saborea, #logo-rda {
     height: 175px;
     margin-top: 20px;
@@ -70,9 +76,13 @@ header {
 #restaurantsList li {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuye el espacio equitativamente */
+    justify-content: space-between;
     margin-bottom: 10px;
     width: 100%;
+    background: rgba(255, 255, 255, 0.4); /* Fondo blanco semitransparente */
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 #restaurantsList a {
@@ -228,3 +238,30 @@ textarea:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.image-container.full-width {
+    width: 100%;
+    margin: 0;
+}
+
+.responsive-image.full-width {
+    width: 100%;
+    height: auto;
+}
+
+.question-box {
+    border: 2px solid rgb(99, 1, 26);
+    padding: 15px;
+    margin: 20px auto; /* Margen superior e inferior, centrado */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 80%; /* Ancho del 80% */
+
+}
+.center-text {
+    text-align: center;
+}
+
+.espaciados {
+    text-align: center;
+}

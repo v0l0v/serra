@@ -10,6 +10,37 @@
     <link href="rda.css" rel="stylesheet">
     
     <title>Solución del Misterio</title>
+    <style>
+        .object-container {
+            list-style-type: none;
+            padding: 0;
+        }
+        .object-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .image-container img {
+            width: 50px;
+            height: 50px;
+        }
+        .name-container {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+        }
+        .button-container button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Encabezado con logo -->
@@ -64,21 +95,19 @@
                 item.id = answer.id;
                 item.draggable = true;
                 item.innerHTML = `
-                    <div style="display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;">
-                        <div class="image-container">
-                            <img src="parada1/parada1a.png" alt="Icono de Objeto" style="width: 50px; height: 50px; margin: 0 auto;">
-                        </div>
-                        <div class="name-container" style="flex-grow: 1; text-align: center;">
-                            <span>${answer.text}</span>
-                        </div>
-                        <div class="button-container" style="display: flex; flex-direction: column;">
-                            <button style="background: none; border: none;" onclick="moveUp(${index})" title="Mover arriba">
-                                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                            </button>
-                            <button style="background: none; border: none;" onclick="moveDown(${index})" title="Mover abajo">
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                            </button>
-                        </div>
+                    <div class="image-container">
+                        <img src="parada1/pin.png" alt="Pin para fijar">
+                    </div>
+                    <div class="name-container">
+                        <span>${answer.text}</span>
+                    </div>
+                    <div class="button-container">
+                        <button onclick="moveUp(${index})" title="Mover arriba">
+                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                        </button>
+                        <button onclick="moveDown(${index})" title="Mover abajo">
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        </button>
                     </div>
                 `;
                 objectList.appendChild(item);

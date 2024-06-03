@@ -12,6 +12,26 @@
     <title>Solución del Misterio</title>
 </head>
 <body>
+    <!-- Encabezado con logo -->
+    <header>
+        <a href="index.html">
+            <img src="logorda.png" alt="Logo Ruta del Amor" id="logo-rda2">
+        </a>
+    </header>
+    
+    <div class="button-container">
+        <button onclick="window.location.href='solucion.html'" style="background: none; border: none;" title="Ver el mejor valorado">
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </button>
+
+        <button onclick="window.location.href='mapa.html'" style="background: none; border: none;" title="Ver el mapa">
+            <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+        </button>
+
+        <button onclick="window.location.href='registro.html'" style="background: none; border: none;" title="Registro de visitas">
+            <i class="fa fa-book" aria-hidden="true"></i> <!-- Icono de bloc de notas -->
+        </button>
+    </div>
 
     <!-- Título principal -->
     <h1>Solución del Misterio</h1>
@@ -24,7 +44,7 @@
     </div>
 
     <!-- Lista de objetos conseguidos -->
-    <div id="objectList" class="object-container"></div>
+    <ul id="objectList" class="object-container"></ul>
 
     <!-- firma -->
     <div class="espaciados">
@@ -39,30 +59,32 @@
             let correctAnswers = JSON.parse(localStorage.getItem('correctAnswers')) || [];
             
             correctAnswers.forEach((answer, index) => {
-                const item = document.createElement('div');
+                const item = document.createElement('li');
                 item.className = 'object-item';
                 item.id = answer.id;
                 item.draggable = true;
-                item.innerHTML = `<p>${answer.text}</p>`;
-                
-                const buttonContainer = document.createElement('div');
-                buttonContainer.className = 'button-container';
-
-                const upButton = document.createElement('button');
-                upButton.textContent = '⬆️';
-                upButton.onclick = () => moveUp(index);
-                buttonContainer.appendChild(upButton);
-
-                const downButton = document.createElement('button');
-                downButton.textContent = '⬇️';
-                downButton.onclick = () => moveDown(index);
-                buttonContainer.appendChild(downButton);
-
-                item.appendChild(buttonContainer);
+                item.innerHTML = `
+                    <div style="display: flex; align-items: center; text-decoration: none; color: inherit; width: 100%;">
+                        <div class="image-container">
+                            <img src="parada1/parada1a.png" alt="Icono de Objeto" style="width: 50px; height: 50px; margin: 0 auto;">
+                        </div>
+                        <div class="name-container" style="flex-grow: 1; text-align: center;">
+                            <span>${answer.text}</span>
+                        </div>
+                        <div class="button-container" style="display: flex; flex-direction: column;">
+                            <button style="background: none; border: none;" onclick="moveUp(${index})" title="Mover arriba">
+                                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                            </button>
+                            <button style="background: none; border: none;" onclick="moveDown(${index})" title="Mover abajo">
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
                 objectList.appendChild(item);
             });
 
-            function moveUp(index) {
+            window.moveUp = function(index) {
                 if (index > 0) {
                     [correctAnswers[index], correctAnswers[index - 1]] = [correctAnswers[index - 1], correctAnswers[index]];
                     localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
@@ -70,7 +92,7 @@
                 }
             }
 
-            function moveDown(index) {
+            window.moveDown = function(index) {
                 if (index < correctAnswers.length - 1) {
                     [correctAnswers[index], correctAnswers[index + 1]] = [correctAnswers[index + 1], correctAnswers[index]];
                     localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));

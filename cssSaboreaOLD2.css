@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,7 @@ body {
     background: url('fondorda.webp') no-repeat center center fixed;
     background-size: cover;
     position: relative;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 p {
@@ -17,7 +17,7 @@ p {
 }
 
 h1, h2, h4 {
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 24px;
     text-align: center;
     width: 75%;
@@ -87,8 +87,8 @@ header {
 }
 
 #restaurantsList li a {
-    color: rgb(0, 0, 0);      /* Establece el color del texto a negro */
-    
+    color: white;      /* Establece el color del texto a blanco */
+    font-weight: bold; /* Hace que la fuente sea negrita */
 }
 
 button {
@@ -110,7 +110,7 @@ button {
 
 .button-container i {
     font-size: 24px;  /* Ajusta el tamaño del icono si es necesario */
-    color:  rgb(99, 1, 26);     /* Cambia el color a blanco */
+    color: white;     /* Cambia el color a blanco */
     cursor: pointer;
 }
 
@@ -151,7 +151,7 @@ textarea {
     font-family: 'Roboto', sans-serif; /* Asumiendo que Roboto es la fuente utilizada en los selectores */
     font-size: 16px; /* Tamaño de fuente similar al de los selectores */
     background-color: rgb(99, 1, 26); /* Fondo blanco o el que corresponda al estilo del formulario */
-    color: rgb(0, 0, 0); /* Color del texto, ajustar si es necesario */
+    color: rgb(255, 255, 255); /* Color del texto, ajustar si es necesario */
     resize: vertical; /* Desactivar el redimensionamiento para mantener un tamaño fijo */
     box-sizing: border-box; /* Incluir padding y border en el cálculo del ancho */
     margin-bottom: 10px; /* Espacio debajo del textarea, ajustar según sea necesario */

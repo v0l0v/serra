@@ -223,9 +223,3 @@ function redirectToBestRated() {
     const bestRatedRestaurants = restaurants.filter(r => r.rating === maxRating);
     window.location.href = bestRatedRestaurants[Math.floor(Math.random() * bestRatedRestaurants.length)].url;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Resto del código existente
-    console.log('Documento cargado y listo');
-    findRestaurants();
-    checkProximity();

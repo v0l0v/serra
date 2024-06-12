@@ -144,7 +144,7 @@ const displayRestaurants = (restaurants) => {
     });
 };
 
-const successCallback = (position) => {
+const updateDistances = (position) => {
     const referencePoint = { 
         latitude: position.coords.latitude, 
         longitude: position.coords.longitude 
@@ -168,4 +168,4 @@ const errorCallback = (error) => {
     console.error('Error getting the location:', error);
 };
 
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+navigator.geolocation.watchPosition(updateDistances, errorCallback);

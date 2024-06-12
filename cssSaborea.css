@@ -226,6 +226,11 @@ select, textarea {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+main {
+    padding: 15px;
+}
+
 footer {
     position: relative;
 }
@@ -279,5 +284,4 @@ footer {
 .fixed-menu nav ul li a:hover i {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: '\f255'; /* Unicode for the hand icon */
 }

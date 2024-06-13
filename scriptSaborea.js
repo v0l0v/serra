@@ -151,6 +151,7 @@ function findRestaurants() {
     }
 }
 
+
 function displayRestaurants(userLat, userLng) {
     const list = document.getElementById('restaurantsList');
     list.innerHTML = ''; // Limpiar entradas anteriores

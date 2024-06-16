@@ -3,13 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     centerRestaurantName();
 });
 
-function centerRestaurantName() {
-    const restaurantNames = document.querySelectorAll('.restaurant-name');
-    restaurantNames.forEach(name => {
-        name.style.textAlign = 'center';
-    });
-}
-
 function watchUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(

@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     watchUserLocation();
+    centerRestaurantName();
 });
+
+function centerRestaurantName() {
+    const restaurantNames = document.querySelectorAll('.restaurant-name');
+    restaurantNames.forEach(name => {
+        name.style.textAlign = 'center';
+    });
+}
 
 function watchUserLocation() {
     if (navigator.geolocation) {

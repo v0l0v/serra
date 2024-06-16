@@ -54,7 +54,7 @@ function createRestaurantListItem(restaurant, userLat, userLng) {
     image.onclick = () => toggleVisited(restaurant.name, listItem, visitedStatus);
 
     const label = document.createElement('label');
-    label.style = "flex-grow: 1; margin-right: 10px; display: flex; align-items: center;";
+    label.style = "display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; width: 100%;"; // Asegura que el contenido esté distribuido equitativamente
 
     const name = document.createTextNode(restaurant.name + ' ');
 

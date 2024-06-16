@@ -1,0 +1,275 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: url('fondorda.webp') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+p {
+    text-align: justify;
+    white-space: pre-wrap;
+}
+
+h1, h2, h4 {
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 2px;
+    width: 75%;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    width: 75%;
+    margin-bottom: 2px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 25px auto;
+}
+
+h4 {
+    font-size: 16px;
+    margin-top: 2px;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+#logo-saborea, #logo-rda {
+    height: 75px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#logo-saborea2, #logo-rda2 {
+    height: 150px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#paradasList {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#paradasList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#paradasList a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+#paradasList img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+#paradasList .image-container {
+    flex: 1;
+    text-align: center;
+}
+
+#paradasList .name-container {
+    flex: 1;
+    text-align: center;
+}
+
+#paradasList .distance-container {
+    flex: 1;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(99, 1, 26);
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px; /* Ajusta este valor según sea necesario */
+
+}
+
+.button-container i {
+    font-size: 24px;
+    color: rgb(99, 1, 26);
+    cursor: pointer;
+}
+
+.button-container button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.button-container button.active i {
+    color: white;
+}
+
+select, textarea {
+    background-color: rgb(99, 1, 26);
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    flex: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+textarea {
+    width: 100%;
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+#compartir-btn {
+    background-color: #4caf50;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    flex: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+.audio-control-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.audio-control {
+    background-color: rgb(156,188,186);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.audio-control i {
+    pointer-events: none;
+}
+
+.audio-control:hover {
+    background-color: rgb(255,203,182);
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+.question-box {
+    border: 2px solid rgb(99, 1, 26);
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 80%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.espaciados {
+    text-align: center;
+}

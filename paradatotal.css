@@ -297,7 +297,3 @@ textarea:focus {
     position: relative;
     z-index: 0;
 }
-.menu-bar {
-    position: relative;
-    z-index: 1;
-}

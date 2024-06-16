@@ -78,14 +78,14 @@ header {
     z-index: 10;
 }
 
-#restaurantsList {
+#paradasList {
     list-style-type: none;
     padding: 0;
     width: 80%;
     margin: 0 auto;
 }
 
-#restaurantsList li {
+#paradasList li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,7 +97,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#restaurantsList a {
+#paradasList a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -105,23 +105,23 @@ header {
     width: 100%;
 }
 
-#restaurantsList img {
+#paradasList img {
     width: 50px;
     height: 50px;
     margin: 0 10px;
 }
 
-#restaurantsList .image-container {
+#paradasList .image-container {
     flex: 1;
     text-align: center;
 }
 
-#restaurantsList .name-container {
+#paradasList .name-container {
     flex: 1;
     text-align: center;
 }
 
-#restaurantsList .distance-container {
+#paradasList .distance-container {
     flex: 1;
     text-align: center;
 }

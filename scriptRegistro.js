@@ -46,7 +46,7 @@ function displayRestaurants(userLat, userLng) {
 
 function createRestaurantListItem(restaurant, userLat, userLng) {
     const listItem = document.createElement('li');
-    listItem.style = "display: flex; align-items: center; margin-bottom: 10px;";
+    listItem.style = "display: flex; align-items: center; justify-content: center; margin-bottom: 10px;";
     
     const image = document.createElement('img');
     image.src = restaurant.imageUrl;
@@ -55,7 +55,7 @@ function createRestaurantListItem(restaurant, userLat, userLng) {
     image.onclick = () => toggleVisited(restaurant.name, listItem, visitedStatus);
 
     const label = document.createElement('label');
-    label.style = "flex-grow: 1; margin-right: 10px; display: flex; align-items: center;";
+    label.style = "flex-grow: 1; margin-right: 10px; display: flex; align-items: center; justify-content: center;";
 
     const name = document.createTextNode(restaurant.name + ' ');
 

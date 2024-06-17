@@ -9,7 +9,7 @@ const paradas = [
         rating: 1
     },
     { 
-        name: "Castell de Cabres", 
+        name: "Táctica y estrategia", 
         latitude: 39.3994776, 
         longitude: -0.3913431, 
         url: "parada2.html", 

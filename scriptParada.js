@@ -225,3 +225,23 @@ function redirectToBestRated() {
     const bestRatedParadas = paradas.filter(r => r.rating === maxRating);
     window.location.href = bestRatedParadas[Math.floor(Math.random() * bestRatedParadas.length)].url;
 }
+
+function checkAnswer() {
+    const selectElement = document.getElementById('questionSelect');
+    const selectedValue = selectElement.value;
+
+    const hiddenText = document.getElementById('hiddenText');
+    const incorrectText = document.getElementById('incorrectText');
+
+    // Ocultar ambos mensajes al principio
+    hiddenText.style.display = 'none';
+    incorrectText.style.display = 'none';
+
+    if (selectedValue === 'correct') {
+        // Si la respuesta es correcta, mostrar el mensaje de acierto
+        hiddenText.style.display = 'block';
+    } else if (selectedValue === 'incorrect') {
+        // Si la respuesta es incorrecta, mostrar el mensaje de error
+        incorrectText.style.display = 'block';
+    }
+}

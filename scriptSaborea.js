@@ -9,7 +9,7 @@ const restaurants = [
         rating: 1
     },
     { 
-        name: "Castell de Cabres", 
+        name: "Táctica y estrategia", 
         latitude: 39.3994776, 
         longitude: -0.3913431, 
         url: "parada2.html", 
@@ -17,7 +17,7 @@ const restaurants = [
         rating: 2
     },
     { 
-        name: "Tollos", 
+        name: "La culpa es de uno",
         latitude: 39.400659,
         longitude: -0.3945479, 
         url: "parada3.html", 

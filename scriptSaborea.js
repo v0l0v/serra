@@ -141,7 +141,7 @@ function findRestaurants() {
                 alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
             },
             {
-                enableHighAccuracy: true,
+                enableHighAccuracy: false,
                 maximumAge: 10000,
                 timeout: 5000
             }

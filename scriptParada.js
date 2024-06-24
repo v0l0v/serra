@@ -17,7 +17,7 @@ const paradas = [
         rating: 2
     },
     { 
-        name: "Tollos", 
+        name: "La culpa es de uno", 
         latitude: 39.400659,
         longitude: -0.3945479, 
         url: "parada3.html", 

@@ -138,7 +138,20 @@ function findParadas() {
                 displayParadas(latitude, longitude);
             },
             (error) => {
-                alert("Error al obtener tu ubicación. Asegúrate de permitir el acceso a tu ubicación.");
+                console.error('Error de geolocalización:', error);
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert("Permiso denegado para acceder a la ubicación.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("Información de ubicación no disponible.");
+                        break;
+                    case error.TIMEOUT:
+                        alert("Se agotó el tiempo de espera para obtener la ubicación.");
+                        break;
+                    default:
+                        alert("Error desconocido al obtener la ubicación.");
+                }
             },
             {
                 enableHighAccuracy: true,

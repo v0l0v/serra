@@ -16,7 +16,7 @@ const restaurants = [
         rating: 2
     },
     { 
-        name: "La culpa es de uno", 
+        name: "Almohada", 
         latitude: 39.400659,
         longitude: -0.3945479, 
         url: "parada3.html", 

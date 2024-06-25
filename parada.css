@@ -78,6 +78,54 @@ header {
     z-index: 10;
 }
 
+#restaurantsList {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#restaurantsList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#restaurantsList a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+#restaurantsList img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+#restaurantsList .image-container {
+    flex: 1;
+    text-align: center;
+}
+
+#restaurantsList .name-container {
+    flex: 1;
+    text-align: center;
+}
+
+#restaurantsList .distance-container {
+    flex: 1;
+    text-align: center;
+}
+
 #paradasList {
     list-style-type: none;
     padding: 0;
@@ -124,6 +172,14 @@ header {
 #paradasList .distance-container {
     flex: 1;
     text-align: center;
+}
+
+.separacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Ajusta este valor según sea necesario */
+
 }
 
 button {
@@ -272,4 +328,27 @@ textarea:focus {
 
 .espaciados {
     text-align: center;
+}
+
+.menu-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(142,178,180);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#map {
+    z-index: 0;
 }

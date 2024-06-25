@@ -24,7 +24,7 @@ const restaurants = [
         rating: 1 
     },
     { 
-        name: "Sacañet", 
+        name: "El hijo", 
         latitude: 39.3996542,
         longitude: -0.3948841, 
         url: "parada4.html", 

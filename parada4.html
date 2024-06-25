@@ -7,25 +7,22 @@
     <!-- Enlaces a fuentes y estilos CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="cssSaborea.css" rel="stylesheet">
+    <link href="parada.css" rel="stylesheet">
     
     <!-- Script para el control de audio -->
     <script src="audioControl.js"></script>
     
-    <title>Sacañet</title>
+    <title>El hijo</title>
 </head>
 <body>
-    <!-- Encabezado con logo -->
-    <header>
-        <a href="index.html">
-            <img src="logorda.png" alt="Logo Ruta del Amor" id="logo-rda">
-        </a>
-    </header>
-    
-    
+    <!-- Contenedor de la imagen y el logo superpuesto -->
+    <div class="image-container full-width">
+        <img src="parada4/imagen4a.jpg" alt="Parada4" class="responsive-image full-width">
+    </div>
+        
     <!-- Título principal -->
-    <h1>Sacañet</h1>
-
+    <h1>El hijo</h1>
+    
     <!-- Controles de audio -->
     <div class="audio-control-container">
         <button id="playPauseButton" class="audio-control" title="Pausar">
@@ -41,29 +38,87 @@
         Tu navegador no soporta la etiqueta de audio.
     </audio>
     
-    <!-- Imagen añadida -->
-    <div class="image-container">
-        <img src="parada4/imagen4a.jpg" alt="Sacañet" class="responsive-image">
-    </div>
-    
-
-    <!-- Texto -->
+    <!-- Texto del poema -->
     <div>
         <h4>
-            <br>
+            EL HIJO
+
+            De haber tenido un hijo<br>
+            no lo habría llamado<br>
+            ni mario ni orlando ni hamlet<br>
+            ni hardy ni brenno<br>
+            como reza mi fardo onomástico<br>
             <br>
 
-            Sacañet es un municipio situado en el sector central de la comarca del Comtat, y su término, de forma alargada, ocupa unos 9,8 km2. Se trata de un pueblo de 243 habitantes situado a 635 metros de altitud y a 16 kilómetros al NE de la ciudad de Alcoi, en la subcomarca de la Vall de Seta y Travadell. Millena limita al N con los municipios de Benillup y Almudaina: al E con el de Balones; al S con el de Gorga; y al O con el de Cocentaina.            
+            más bien le habría<br>
+            colgado un monosílabo<br>
+            algo así como luis o blas o juan<br>
+            o paz o luz si era mujer<br>
+            de manera que uno pudiera convocarlo<br>
+            con sólo respirar<br>
+            <br>
 
-            <br>
+            de haber tenido un hijo<br>
+            le habría enseñado a leer<br>
+            en los libros y muros<br>
+            y en los ojos veraces<br>
+            y también a escribir<br>
+            pero sólo en las rocas<br>
+            con un buril de fuego<br>
             <br>
 
-            El relieve de Millena se presenta accidentado por las elevaciones de la Loma Redona, de 982 metros de altitud y el Alto de Patos, estribaciones meridionales de la sierra de Almudaina, que tiene su punto más alto en la Loma Alta, con 1.017 metros de altitud, de orientación bética SO-NE. En la falda meridional de la Loma Redona se halla la Font del Cosí, donde toma origen el barranco del mismo nombre que recorre la parte oriental del término de Millena, para a continuación entrar en el de Gorga y acabar desembocando en el río de la Vall de Seta. La parte occidental, compuesta de materiales calizos y margosos, cubierta de depósitos miocénicos de color blanquecino, es drenada mediante profundos y recortados cauces por los barrancos del Pinar, la Perera, la Zarza y Caraita. Este último dibuja el límite septentrional con Benillup.
-            
+            de modo que las lluvias<br>
+            limpiaran sus palabras<br>
+            defendiéndolas<br>
+            de la envidia y la roña<br>
+            y eso aunque nadie nunca<br>
+            se arrimara a leerlas<br>
             <br>
+
+            de haber tenido un hijo<br>
+            acaso no sabría qué hacer con él<br>
+            salvo decirle adiós cuando se fuera<br>
+            con mis heridos ojos<br>
+            por la vida<br>
             <br>
         </h4>
     </div>
-    <script src="scriptSaborea.js"></script>
+    <!-- Pregunta con opciones desplegables -->
+<div class="question-box">
+    <div id="questionBlock" class="center">
+        <h4>¿Quieres conseguir un objeto secreto?</h4>
+        <p class="center-text">Si aciertas la pregunta, te entregaremos un objeto muy importante, lo encontrarás en la lista de objetos conseguidos, el icono de la estrella.<br>Pulsa sobre él para ver todos los objetos que tienes. Cuando tengas 9 objetos, podrás optar a resolver el misterio.</p>
+        <select id="questionSelect" onchange="checkAnswer()">
+            <option value="">Selecciona una opción</option>
+            <option value="incorrect">982 metros</option>
+            <option value="incorrect">635 metros</option>
+            <option value="correct">1.017 metros</option>
+        </select>
+    </div>
+
+    <!-- Añadiendo contenido oculto -->
+    <div id="hiddenText" style="display: none;">
+        <h4>Correcto, eres un gran estratega táctico !!!</h4>
+    </div>
+    <!-- Respuesta incorrecta -->
+    <div id="incorrectText" style="display: none;">
+        <h4>La respuesta es incorrecta, inténtalo de nuevo ! </h4>
+    </div>
+</div>
+
+<div class="espaciados">
+    <div id="espaciados" class="center">
+        <h4>by v0l0v</h4>
+    </div>
+</div>
+
+<script src="scriptParada.js"></script>
+
+<div class="menu-bar">
+    <a href="index.html"><i class="fas fa-home"></i><br>Home</a>
+    <a href="mapa.html"><i class="fa fa-map-marker-alt"></i><br>Mapa</a>
+    <a href="registro.html"><i class="fas fa-user"></i><br>Registro</a>
+</div>
+
 </body>
 </html>

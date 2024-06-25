@@ -1,6 +1,6 @@
 const restaurants = [
     { 
-        name: "El Valle de Seta", 
+        name: "Estados de ánimo", 
         latitude: 39.4020715, 
         longitude: -0.3895136, 
         url: "parada1.html", 

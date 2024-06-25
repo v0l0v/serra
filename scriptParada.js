@@ -1,7 +1,7 @@
 
 const paradas = [
     { 
-        name: "El Valle de Seta", 
+        name: "Estados de ánimo", 
         latitude: 39.4032738, 
         longitude: -0.3991262, 
         url: "parada1.html", 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Enlaces a fuentes y estilos CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="parada.css" rel="stylesheet">
+    
+    <!-- Script para el control de audio -->
+    <script src="audioControl.js"></script>
+    
+    <title>Peña Saganta</title>
+</head>
+<body>
+    <!-- Contenedor de la imagen y el logo superpuesto -->
+    <div class="image-container full-width">
+        <img src="parada6/imagen6a.png" alt="Parada6" class="responsive-image full-width">
+    </div>
+    
+    
+    <!-- Título principal -->
+    <h1>Peña Sagantas</h1>
+    
+    <!-- Controles de audio -->
+    <div class="audio-control-container">
+        <button id="playPauseButton" class="audio-control" title="Pausar">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button id="stopButton" class="audio-control" title="Detener">
+            <i class="fas fa-stop"></i>
+        </button>
+    </div>
+    
+    <!-- Elemento de audio -->
+    <audio id="audio" src="parada6/parada6.mp3" autoplay loop>
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+    
+    <!-- Texto del poema -->
+    <div>
+        <h4>
+            Como atractivo principal, se encuentra el recorrido por el sendero PR-CV 314, para acceder a la Peña Saganta (10 km); y el nuevo sendero PR-CV 386 Camino a la Cueva Negra, discurre por el noroeste de la población hasta llegar al vértice geodésico. Bellos paisajes para ascender a la cumbre de la Peña Saganta, meta de todo visitante que admire los bellos paisajes para llegar ante un espacio lleno de luz que se agiganta como un monumento violento y firme.
+
+            Las calles proyectan una sensación de quietud, de tranquilidad acompasada; con la ermita de San Roque, levantada junto a los naranjos, y la magnificencia del río Mijares.
+
+            El templo parroquial de estilo corintio preside la plaza de la iglesia, dedicada a San Juan Bautista. En Semana Santa las gentes del pueblo rememoran la pasión de Jesús hasta el calvario.
+
+            <br>
+            <br>
+
+        </h4>
+    </div>
+
+    <!-- Pregunta con opciones desplegables -->
+    <div class="question-box">
+        <div id="questionBlock" class="center">
+            <h4>¿Quieres conseguir un objeto secreto?</h4>
+            <p class="center-text">Si aciertas la pregunta, te entregaremos un objeto muy importante, lo encontrarás en la lista de objetos conseguidos, el icono de la estrella.<br>Pulsa sobre él para ver todos los objetos que tienes. Cuando tengas 9 objetos, podrás optar a resolver el misterio.</p>
+            <select id="selector1"></select>
+            <select id="selector2"></select>
+            <select id="selector3"></select>
+        </div>
+        <script src="loadcsv.js"></script>
+        <!-- Añadiendo contenido oculto -->
+        <div id="hiddenText" style="display: none;">
+                <h4>esta es la frase que va en primer lugar</h4>
+            </div>
+        <!-- Respuesta incorrecta -->
+        <div id="incorrectText" style="display: none;">
+                <h4>La respuesta es incorrecta, inténtalo de nuevo ! </h4>
+        </div>
+    </div>
+
+    <div class="espaciados">
+        <div id="espaciados" class="center">
+            <h4>by v0l0v</h4>
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <a href="index.html"><i class="fas fa-home"></i><br>Home</a>
+        <a href="mapa.html"><i class="fa fa-map-marker-alt"></i><br>Mapa</a>
+        <a href="registro.html"><i class="fas fa-user"></i><br>Registro</a>
+    </div>
+</body>
+</html>

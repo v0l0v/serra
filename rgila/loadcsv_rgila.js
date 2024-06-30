@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Añadir el prefijo con el nombre del restaurante y la carpeta
 const nombreRestaurante = "Restaurante_Gila"; // Asegúrate de usar el nombre correcto del restaurante aquí
-const nombreArchivo = `${nombreRestaurante}-${anio}${mes}${dia}.txt`;
+const nombreArchivo = `rgila/${nombreRestaurante}-${anio}${mes}${dia}.txt`;
 
     cargaSelectoresUnicoArchivo(nombreArchivo);
 });

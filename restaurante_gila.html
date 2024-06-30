@@ -15,48 +15,14 @@
     <title>Restaurante Gila</title>
 </head>
 <body>
-    
     <!-- Contenedor de la imagen y el logo superpuesto -->
     <div class="image-container full-width">
         <img src="parada6/imagen6a.png" alt="Parada6" class="responsive-image full-width">
     </div>
-
-        <!-- Título principal -->
-        <h1>Táctica y estrategia</h1>
     
-        <!-- Controles de audio -->
-        <div class="audio-control-container">
-            <button id="playPauseButton" class="audio-control" title="Pausar">
-                <i class="fas fa-pause"></i>
-            </button>
-            <button id="stopButton" class="audio-control" title="Detener">
-                <i class="fas fa-stop"></i>
-            </button>
-        </div>
-        
-        <!-- Elemento de audio -->
-        <audio id="audio" src="parada2/parada2.mp3" autoplay loop>
-            Tu navegador no soporta la etiqueta de audio.
-        </audio>
-        
-        <!-- Texto del poema -->
-        <div>
-            <h4>
-                Mi táctica es mirarte, aprender como sos quererte, como sos.<br>
-                <br>
-                Mi táctica es hablarte y escucharte, construir con palabras un puente indestructible.<br>
-                <br>
-                Mi táctica es quedarme en tu recuerdo, no sé cómo ni sé con qué pretexto, pero quedarme en vos.<br>
-                <br>
-                Mi táctica es ser franco y saber que sos franca y que no nos vendamos simulacros, para que entre los dos no haya telón ni abismos.<br>
-                <br>
-                Mi estrategia es en cambio más profunda y más simple.<br>
-                <br>
-                Mi estrategia es que un día cualquiera, no sé cómo ni sé con qué pretexto, por fin me necesites.<br>
-                <br>
-            </h4>
-        </div>
     <ul id="restaurantsList"></ul>
+    <h1>Restaurante Gila</h1>
+    <h2>Elige tu menu<br>Envianoslo por Whatsapp<br>Te lo llevamos donde quieras</h2>
     <div class="h2">     
         <select id="selector1"></select>
         <select id="selector2"></select>
@@ -65,7 +31,7 @@
         <textarea id="anotaciones" style="select" placeholder="Añade tus anotaciones aquí..." rows="6"></textarea>
         <button id="compartir-btn" onclick="compartirw()">Enviar por WhatsApp</button>
     </div>
-    <script src="https://gila.ovh/rutadelamor/rgila/loadcsv_rgila.js"></script>
+    <script src="https://gila.ovh/saborea/rgila/loadcsv_rgila.js"></script>
     <script src="compartir.js"></script>
 </body>
 </html>

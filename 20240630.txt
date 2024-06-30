@@ -1,3 +1,0 @@
-selector1, fuera de la carpeta rgila sin nombre, Ensalada Valenciana, Gazpacho
-selector2, Paella Valenciana, RV Fabada vegana, Calabaza asada con col rizada
-selector3, Flan de huevo, Sandia, RV Bizcocho

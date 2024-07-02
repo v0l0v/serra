@@ -336,7 +336,7 @@ textarea:focus {
     left: 0;
     width: 100%;
     background-color: rgb(142,178,180);
-    padding: 10px;
+    padding: 0px;
     text-align: center;
     display: flex;
     justify-content: space-evenly;

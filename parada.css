@@ -317,7 +317,8 @@ textarea:focus {
     padding: 15px;
     margin: 20px auto;
     border-radius: 5px;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     width: 80%;
 }
 

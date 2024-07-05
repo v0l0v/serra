@@ -314,12 +314,12 @@ textarea:focus {
 
 .question-box {
     border: 2px solid rgb(99, 1, 26);
-    padding: 15px;
+    padding: 0px;
     margin: 20px auto;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    width: 50%;
+    width: 80%;
 }
 
 .center-text {

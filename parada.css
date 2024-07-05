@@ -314,8 +314,8 @@ textarea:focus {
 
 .question-box {
     border: 2px solid rgb(99, 1, 26);
-    padding: 25px;
-    margin: 20px auto;
+    padding: 15px;
+    margin: 10px auto;
     border-radius: 0px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
